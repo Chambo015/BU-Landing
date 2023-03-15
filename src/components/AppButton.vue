@@ -9,7 +9,7 @@
 </script>
 
 <template>
-    <button :class="[' w-72 text-center h-[70px] text-[28px] rounded', regular ? 'border-[#D9D9D9] hover:border-[#1495FE] bg-transparent border-[3px]': 'bg-[#1495FE] hover:bg-[#0067C3]']">{{ label }}</button>
+    <button :class="[' 2xl:w-72 w-full text-center 2xl:h-[70px] 2xl:text-[28px] h-11 rounded', regular ? 'border-[#D9D9D9] hover:border-[#1495FE] bg-transparent 2xl:border-[3px] border': 'bg-[#1495FE] hover:bg-[#0067C3]']">{{ label }}</button>
 </template>
 
 
