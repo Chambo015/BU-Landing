@@ -1,6 +1,6 @@
 <template>
     <section class="container pt-20 pb-24">
-        <h2 class="mb-2 text-[64px] font-bold leading-tight">
+        <h2 class="mb-2 ">
             Зарплаты <span class="text-[#30A2FF]">web3</span> специалиста
         </h2>
         <p class="mb-14 text-4xl">По данным web3.career, в среднем составляет</p>
