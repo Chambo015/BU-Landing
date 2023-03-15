@@ -1,4 +1,5 @@
 <script setup>
+import TheCTA from './components/TheCTA.vue';
 import TheCases from './components/TheCases.vue';
 import TheCertificates from './components/TheCertificates.vue';
 import TheEducationLists from './components/TheEducationLists.vue';
@@ -16,6 +17,7 @@ import TheSkillsDev from './components/TheSkillsDev.vue';
   <TheEducationLists />
   <TheCertificates />
   <TheFeedbacks />
+  <TheCTA />
 </template>
 
 <style scoped>

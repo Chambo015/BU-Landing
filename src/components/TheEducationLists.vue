@@ -59,7 +59,7 @@ const accordion = ref([
 </script>
 
 <template>
-    <div class="bg-[#181818]">
+    <div class="bg-[#181818] w-screen">
         <section class="container flex gap-[60px] py-[180px]">
             <div>
                 <h2 class="mb-8"><span class="text-[#30A2FF]">Программа обучения —</span> 9 месяцев</h2>
