@@ -3,6 +3,7 @@ import TheCTA from './components/TheCTA.vue';
 import TheCases from './components/TheCases.vue';
 import TheCertificates from './components/TheCertificates.vue';
 import TheEducationLists from './components/TheEducationLists.vue';
+import TheFAQ from './components/TheFAQ.vue';
 import TheFeedbacks from './components/TheFeedbacks.vue';
 import TheFooter from './components/TheFooter.vue';
 import TheHero from './components/TheHero.vue';
@@ -23,6 +24,7 @@ import TheWorkShops from './components/TheWorkShops.vue';
   <TheTeam />
   <TheFeedbacks />
   <TheCTA />
+  <TheFAQ />
   <TheFooter />
 </template>
 

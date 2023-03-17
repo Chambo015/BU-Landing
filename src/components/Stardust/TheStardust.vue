@@ -4,7 +4,7 @@
             <div class="noise"></div>
    <!--          <div class="overlay-noise"></div> -->
         </div>
-        <div class="w-full  aspect-square rounded-full relative blur-[89px]" :style="{background: backgroundEclipse}">
+        <div class="w-full  aspect-square rounded-full relative " :style="{background: backgroundEclipse, filter: `blur(${blurFilter})`}">
             <div class="h-[70%] absolute top-1/2 aspect-[1/1.42] left-1/2 -translate-x-1/2" :style="{background: backgroundRectangle}">
 
             </div>
@@ -21,6 +21,10 @@ defineProps({
     backgroundRectangle: {
         type: String,
         default: 'linear-gradient(180deg, rgba(24, 255, 158, 0) 0%, #17FFE3 100%)'
+    },
+    blurFilter: {
+        type: String,
+        default: '90px'
     }
 })
 </script>
