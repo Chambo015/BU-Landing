@@ -1,6 +1,6 @@
 <template>
-    <div class="w-screen bg-[#181818]">
-        <section class="container py-36">
+    <section class=" bg-[#181818]">
+        <div class="container py-36">
             <h2 class="mb-20"><span class="text-[#30A2FF]">Записаться</span> на курс</h2>
             <div class="flex gap-10 justify-center">
                 <div class="bg-[#1D1D1D] w-[600px] rounded-md overflow-hidden">
@@ -38,8 +38,8 @@
              
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 </template>
 
 <script>
