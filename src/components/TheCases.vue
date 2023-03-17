@@ -31,7 +31,7 @@
                 <li>Более 90% всех смарт-контрактов написаны на Solidity</li>
                 <li>Самый востребованный язык блокчейн разработки</li>
             </ul>
-            <img :src="solidityImg" alt="solidity" width="500" height="500" class="absolute top-1/2 -translate-y-1/2 right-10">
+            <img :src="solidityImg" alt="solidity" width="500" height="500" class="absolute top-1/2 -translate-y-1/2 right-10 aspect-square w-1/3">
         </div>
     </section>
 </template>

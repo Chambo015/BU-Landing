@@ -187,3 +187,15 @@
     font-weight: 400;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Pixeleum 48';
+    src: url('Pixeleum-48.eot');
+    src: url('Pixeleum-48.eot?#iefix') format('embedded-opentype'),
+        url('Pixeleum-48.woff2') format('woff2'),
+        url('Pixeleum-48.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
