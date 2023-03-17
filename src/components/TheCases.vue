@@ -1,5 +1,8 @@
 <template>
-    <section class="container pt-20 pb-24">
+    <section class="container pt-20 pb-24 relative">
+        <TheStardust class="h-[890px] rotate-[100deg] -z-10 -bottom-[300px] -right-[450px]" background-eclipse="linear-gradient(180deg, rgba(0, 194, 255, 0) 0%, #FF29C3 100%)" background-rectangle="linear-gradient(180deg, rgba(24, 75, 255, 0) 0%, #174AFF 100%)" />
+        <IconStarCross class="absolute w-[74px] bottom-0 -right-[100px] " />
+        <IconStarHexagram class="absolute w-[45px] bottom-[200px] -right-[60px]"/>
         <h2 class="mb-2 ">
             Зарплаты <span class="text-[#30A2FF]">web3</span> специалиста
         </h2>
@@ -38,6 +41,9 @@
 
 <script setup>
 import solidityImg from '../assets/solidity.png'
+import TheStardust from './Stardust/TheStardust.vue';
+import IconStarCross from './icons/IconStarCross.vue';
+import IconStarHexagram from './icons/IconStarHexagram.vue';
 </script>
 
 <style lang="scss" scoped></style>

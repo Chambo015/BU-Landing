@@ -1,5 +1,6 @@
 <template>
     <section class="container pt-[140px] pb-[200px] relative">
+        <TheStardust class="h-[450px] -rotate-45 -z-10 right-0 top-[300px]" background-eclipse="linear-gradient(180deg, #82392C 0%, #D0A22C 100%)" background-rectangle="linear-gradient(180deg, rgba(255, 79, 24, 0) 0%, #FF4117 100%)" />
         <div>
             <h2 class="mb-24 w-[830px]">
                 Вашу квалификацию подтвердят <span class="text-[#30A2FF]">официальные документы</span>
@@ -17,6 +18,8 @@
             </div>
         </div>
         <div class="bg-[#DDD6C2] w-[711px] h-[400px] absolute z-10 top-1/2 -translate-y-1/2 right-0 shadow-[13px_-8px_19px_0px_rgba(34,60,80,0.2)]">
+            <IconStarHexagram class="w-[60px] absolute right-[20%] -top-[20%]" />
+            <IconStarCross class="absolute w-[110px] -right-[80px] -top-[70px]" />
         </div>
         <div class="bg-[#F4E4B6] w-[765px] h-[430px] absolute z-20 top-1/2 -translate-x-20 -translate-y-[10%] right-0 shadow-[13px_-8px_19px_0px_rgba(34,60,80,0.2)]">
         </div>
@@ -26,12 +29,15 @@
 <script>
 import IconLogo from './icons/IconLogo.vue';
 import IconAstanaHub from './icons/IconAstanaHub.vue';
+import TheStardust from './Stardust/TheStardust.vue';
+import IconStarCross from './icons/IconStarCross.vue';
+import IconStarHexagram from './icons/IconStarHexagram.vue';
 
 export default {
     setup() {
         return {};
     },
-    components: { IconLogo, IconAstanaHub }
+    components: { IconLogo, IconAstanaHub, TheStardust, IconStarCross, IconStarHexagram }
 };
 </script>
 

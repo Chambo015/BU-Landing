@@ -29,7 +29,7 @@ defineProps({
 
 .noise-wrap {
     position: absolute;
-    inset: -25%;
+    inset: -22%;
     z-index: 1;
 }
 .noise {
