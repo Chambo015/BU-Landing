@@ -1,4 +1,8 @@
 <script setup>
+import { onMounted } from 'vue';
+import { inView, animate } from "motion";
+
+
 import IconLogo from './icons/IconLogo.vue';
 import IconStarOctagram from './icons/IconStarOctagram.vue';
 import IconStarHexagram from './icons/IconStarHexagram.vue';
@@ -10,6 +14,10 @@ import TheStardust from './Stardust/TheStardust.vue';
 import TheEllipse1 from './Stardust/TheEllipse1.vue';
 import TheEllipse2 from './Stardust/TheEllipse2.vue';
 import TheEllipse3 from './Stardust/TheEllipse3.vue';
+
+
+
+
 </script>
 
 <template>
