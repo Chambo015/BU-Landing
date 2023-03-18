@@ -4,7 +4,7 @@
         <IconStarHexagram class="absolute -bottom-[50px] -left-[120px] h-[110px] w-[110px]" />
         <h2 class="mb-[60px]">Состав нашей <span class="text-[#30A2FF]">команды</span></h2>
         <div ref="container" class="keen-slider ">
-            <div class="keen-slider__slide cursor-grab active:cursor-grabbing mr-10 min-w-[320px]" v-for="item in 8" :key="item">
+            <div class="keen-slider__slide cursor-grab active:cursor-grabbing pr-10 min-w-[360px]" v-for="item in 15" :key="item">
                 <div class="flex flex-col items-center bg-[#141414] py-10 px-7">
                         <div class="mb-5 w-[200px] h-[200px] bg-[#D9D9D9] rounded-full"></div>
                         <div class="mb-5 text-[32px]">Имя Фамилия</div>
@@ -24,7 +24,7 @@ import IconStarHexagram from './icons/IconStarHexagram.vue';
 export default {
     setup() {
         const [container] = useKeenSlider({
-            mode: "free",
+            mode: "snap",
             slides: {
                 perView: "auto"
             },

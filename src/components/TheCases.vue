@@ -1,5 +1,5 @@
 <template>
-    <section class="container pt-20 pb-24 relative">
+    <section class="container pt-20 pb-24 relative" v-cloak>
         <TheStardust class="h-[890px] rotate-[100deg] -z-10 -bottom-[300px] -right-[450px]" background-eclipse="linear-gradient(180deg, rgba(0, 194, 255, 0) 0%, #FF29C3 100%)" background-rectangle="linear-gradient(180deg, rgba(24, 75, 255, 0) 0%, #174AFF 100%)" />
         <IconStarCross class="absolute w-[74px] bottom-0 -right-[100px] " />
         <IconStarHexagram class="absolute w-[45px] bottom-[200px] -right-[60px]"/>

@@ -2,7 +2,7 @@
     <section class="container relative py-36">
         <h2 class="mb-10">Что о нас <span class="text-[#30A2FF]">студенты думают:</span></h2>
         <div ref="container" class="keen-slider ">
-            <div class="keen-slider__slide cursor-grab active:cursor-grabbing min-w-[600px] mr-10" v-for="item in feedbacks" :key="item.id">
+            <div class="keen-slider__slide cursor-grab active:cursor-grabbing min-w-[640px] pr-10" v-for="item in feedbacks" :key="item.id">
                 <div class="flex bg-[#141414] p-10">
                     <img src="/user.png" alt="user" width="56" height="56" class="mr-5 aspect-square self-start" />
                     <div>
@@ -48,7 +48,7 @@ export default {
     },
     setup() {
         const [container] = useKeenSlider({
-            mode: 'free',
+            mode: 'free-snap',
             slides: {
                 perView: "auto"
             },

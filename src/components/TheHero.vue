@@ -13,7 +13,7 @@ import TheEllipse3 from './Stardust/TheEllipse3.vue';
 </script>
 
 <template>
-    <div class="bg-[#181818]">
+    <div class="bg-[#181818]" v-cloak>
         <header
             class="container 2xl:mb-24 mb-7 2xl:pt-[60px] pt-4 duration-1000 flex justify-between items-center z-10 relative"
             v-motion="{
@@ -23,7 +23,7 @@ import TheEllipse3 from './Stardust/TheEllipse3.vue';
             <IconLogo class="2xl:w-[150px] w-20" />
             <div class="bg-[#D9D9D9] px-7 py-3 font-['Pixeleum_48'] text-[#181818] text-[24px] !leading-none cursor-pointer rounded">NFT курс</div>
         </header>
-        <section class="container flex flex-col-reverse 2xl:flex-row  justify-between pb-32 relative">
+        <section class="container flex flex-col-reverse 2xl:flex-row  justify-between pb-32 relative" id="hero">
             <TheStardust class="h-[405px] -left-[200px] top-[20%]" />
             <TheEllipse1 class="absolute top-[40%] -left-[400px]" />
             <IconStarOctagram class="absolute top-[10%] -left-[100px]" />
@@ -40,7 +40,7 @@ import TheEllipse3 from './Stardust/TheEllipse3.vue';
                 </h1>
                 <p class="2xl:mb-28 mb-7 2xl:text-2xl 2xl:font-medium max-w-[670px] leading-tight">С нуля до уровня Junior+ вместе с Blockchain University при поддержке Astana Hub</p>
                 <div class="2xl:mb-28 mb-7">
-                    <AppButton label="Записаться" class="2xl:mr-10 2xl:mb-0 mb-4" /> <AppButton label="Изучить программу" regular />
+                    <a href="#forms"><AppButton label="Записаться" class="2xl:mr-10 2xl:mb-0 mb-4" /></a> <a href="#education"><AppButton label="Изучить программу" regular /></a>
                 </div>
                 <div class="flex items-center flex-wrap 2xl:flex-nowrap 2xl:items-stretch gap-12 justify-center 2xl:justify-start 2xl:jus">
                     <div

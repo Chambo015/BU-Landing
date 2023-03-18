@@ -2,6 +2,7 @@
 import TheCTA from './components/TheCTA.vue';
 import TheCases from './components/TheCases.vue';
 import TheCertificates from './components/TheCertificates.vue';
+import TheChat from './components/TheChat.vue';
 import TheEducationLists from './components/TheEducationLists.vue';
 import TheFAQ from './components/TheFAQ.vue';
 import TheFeedbacks from './components/TheFeedbacks.vue';
@@ -15,21 +16,24 @@ import TheWorkShops from './components/TheWorkShops.vue';
 </script>
 
 <template>
-  <TheHero />
-  <TheCases />
-  <TheSkillsDev />
-  <TheLead />
-  <TheWorkShops />
-  <TheEducationLists />
-  <TheCertificates />
-  <TheTeam />
-  <TheFeedbacks />
-  <TheCTA />
-  <TheStudentList />
-  <TheFAQ />
-  <TheFooter />
+  <main v-cloak>
+    <TheHero />
+    <TheCases />
+    <TheSkillsDev />
+    <TheLead />
+    <TheWorkShops />
+    <TheEducationLists />
+    <TheCertificates />
+    <TheTeam />
+    <TheFeedbacks />
+    <TheCTA />
+    <TheStudentList />
+    <TheFAQ />
+    <TheFooter />
+  </main>
+  <TheChat />
 </template>
 
-<style scoped>
+<style>
 
 </style>
