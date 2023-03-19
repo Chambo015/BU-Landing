@@ -19,8 +19,25 @@ const leftCol = ref(null);
 const headerRef = ref(null);
 const imgRef = ref(null)
 const saleRef = ref(null)
+const offersRef = ref(null)
+
 
 const transition = { delay: 0.2, duration: 0.9, easing: [0.17, 0.55, 0.55, 1] }
+
+const ourOffer = [
+    {
+        title: 'Обучение',
+        subTitle: 'на реальных кейсах'
+    },
+    {
+        title: 'Онлайн',
+        subTitle: 'в удобное время'
+    },
+    {
+        title: 'Помощь',
+        subTitle: 'в трудоустройстве'
+    }
+]
 
 onMounted(() => {
     inView(leftCol.value, ({ target }) => {
@@ -53,12 +70,22 @@ onMounted(() => {
             transition
         );
     });
+    inView(offersRef.value, ({ target }) => {
+        animate(
+            target.querySelectorAll('li'),
+            {
+                transform: ['translateY(100px)', 'none'],
+                opacity: [0, 1],
+            },
+            transition
+        );
+    });
     inView(saleRef.value, ({ target }) => {
         animate(
             target,
             {
                 transform: ['scale(0) ', 'scale(1)'], 
-                opacity: [0, 1],
+                opacity: 1,
             },
             transition
         );
@@ -143,18 +170,10 @@ onMounted(() => {
     </div>
     <TheInfiniteTicker />
     <section class="container py-20">
-        <ul class="ml-10 flex list-disc justify-between text-5xl font-medium [&>li]:duration-500">
-            <li>
-                Обучение
-                <p class="text-3xl font-normal">на реальных кейсах</p>
-            </li>
-            <li>
-                Онлайн
-                <p class="text-3xl font-normal">в удобное время</p>
-            </li>
-            <li>
-                Помощь
-                <p class="text-3xl font-normal">в трудоустройстве</p>
+        <ul ref="offersRef" class="ml-10 flex list-disc justify-between text-5xl font-medium [&>li]:duration-500 ">
+            <li v-for="offer in ourOffer" :key="offer.title" class="opacity-0">
+                {{offer.title}}
+                <p class="text-3xl font-normal">{{offer.subTitle}}</p>
             </li>
         </ul>
     </section>
