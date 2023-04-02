@@ -3,37 +3,39 @@ import { animate } from 'motion';
 import { onMounted, ref } from 'vue';
 const path = ref(null);
 
-const draw = (progress) => ({
-      // This property makes the line "draw" in when animated
-      strokeDashoffset: 1 - progress,
-    
-      // Each line will be hidden until it starts drawing
-      // to fix a bug in Safari where the line can be
-      // partially visible even when progress is at 0
-      visibility: "visible",
-      opacity: 1
-    })
+const draw = () => ({
+    /*   strokeDashoffset: 0, */
+    visibility: 'visible',
+    opacity: 1,
+    strokeDasharray: '2311, 0',
+});
 
 onMounted(() => {
-    animate(path.value, draw(1), { duration: 2.6, delay: 1 });
+    animate(path.value, draw(), { duration: 2.6, delay: 1 });
 });
 </script>
 
-<template><svg width="888" height="583" viewBox="0 0 888 583" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path   ref="path" d="M878.67 158.013C900.367 228.735 871.751 307.843 807.378 378.661C743.031 449.452 643.135 511.724 522.922 548.604C402.708 585.483 285.078 589.945 192.102 567.419C99.0897 544.883 31.0339 495.433 9.33765 424.711C-12.3586 353.99 16.2573 274.882 80.6301 204.063C144.977 133.272 244.873 71.0003 365.086 34.1207C485.3 -2.75899 602.93 -7.2207 695.906 15.3057C788.918 37.841 856.974 87.2916 878.67 158.013Z" stroke="white" stroke-opacity="0.4" stroke-width="3"   pathLength="1"/>
+<template>
+    <svg width="888" height="583" viewBox="0 0 888 583" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            ref="path"
+            d="M878.67 158.013C900.367 228.735 871.751 307.843 807.378 378.661C743.031 449.452 643.135 511.724 522.922 548.604C402.708 585.483 285.078 589.945 192.102 567.419C99.0897 544.883 31.0339 495.433 9.33765 424.711C-12.3586 353.99 16.2573 274.882 80.6301 204.063C144.977 133.272 244.873 71.0003 365.086 34.1207C485.3 -2.75899 602.93 -7.2207 695.906 15.3057C788.918 37.841 856.974 87.2916 878.67 158.013Z"
+            stroke="white"
+            stroke-opacity="0.4"
+            stroke-width="3" />
     </svg>
-    </template>
+</template>
 
 <style scoped>
 circle,
-  path {
+path {
     fill: transparent;
     stroke-width: 3px;
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
+    stroke-dasharray: 0, 2311;
+    stroke-dashoffset: 500;
     stroke-linecap: round;
     stroke-linejoin: round;
     visibility: hidden;
-    opacity: 0
-  }
+    opacity: 0;
+}
 </style>
