@@ -1,65 +1,94 @@
 <script setup>
-import {  ref } from 'vue';
+import { ref } from 'vue';
+import IconArrowDown from './icons/IconArrowDown.vue';
 
 const accordion = ref([
     {
         summary: 'Знакомство, краткая история',
-        details:
-            'Материалы курса не потеряют своей актуальности — мы обновляем лекции, и они автоматически загружаются в ваш личный кабинет.',
+        details: null,
         isOpen: false,
     },
     {
         summary: 'Введение в блокчейн',
-        details:
-            'Материалы курса не потеряют своей актуальности — мы обновляем лекции, и они автоматически загружаются в ваш личный кабинет.',
+        details: 'Введение в технологию блокчейн. Криптография в блокчейне',
         isOpen: false,
     },
     {
         summary: 'Bitcoin',
-        details:
-            'Материалы курса не потеряют своей актуальности — мы обновляем лекции, и они автоматически загружаются в ваш личный кабинет.',
+        details: 'Bitcoin: майнинг, консенсус, эмиссия, форки',
         isOpen: false,
     },
     {
         summary: 'Ethereum',
-        details:
-            'Материалы курса не потеряют своей актуальности — мы обновляем лекции, и они автоматически загружаются в ваш личный кабинет.',
+        details: 'Протокол Ethereum, устройство и принцип действия EVM, знакомство с смарт-контрактами',
         isOpen: false,
     },
     {
         summary: 'Solidity',
-        details:
-            'Материалы курса не потеряют своей актуальности — мы обновляем лекции, и они автоматически загружаются в ваш личный кабинет.',
+        details: null,
+        list: [
+            'Основы синтаксиса и базовые типы данных',
+            'Модификаторы памяти и доступа в функциях',
+            'Условные операторы и циклы',
+            'Ссылочные типы данных',
+            'Модификаторы переменных',
+        ],
         isOpen: false,
     },
     {
         summary: 'Web3',
         details:
-            'Материалы курса не потеряют своей актуальности — мы обновляем лекции, и они автоматически загружаются в ваш личный кабинет.',
+           null,
+        list: [
+            'Концепция Web3. Библиотека web.js',
+            'Создание проекта, настройка провайдера',
+            'Настройка аккаунта',
+            'Взаимодействие с сетью, контрактами',
+            'Деплой контрактов, создание транзакций',
+            'Cобытия',
+            'Методы web3',
+            'Создание простого daaps с изпользованием.',
+            'Библиотека ethers.js',
+            'Утилиты',
+        ],
         isOpen: false,
     },
     {
         summary: 'Hardhat',
         details:
-            'Материалы курса не потеряют своей актуальности — мы обновляем лекции, и они автоматически загружаются в ваш личный кабинет.',
+            null,
         isOpen: false,
+        list: [
+            'Коцепция HardHat',
+            'Архитектура проекта',
+            'Написание тестов, скриптов, тасков',
+            'Форк mainneta',
+            'Развёртывание и верификация контракта в тестовой сети',
+            'Использование TS'
+        ]
     },
     {
         summary: 'Defi',
         details:
-            'Материалы курса не потеряют своей актуальности — мы обновляем лекции, и они автоматически загружаются в ваш личный кабинет.',
+            null,
         isOpen: false,
-    },
-    {
-        summary: 'Что дальше?',
-        details: 'Что?',
-        isOpen: false,
+        list: [
+            'Токены',
+            'Стандарт ERC20, ERC721, ERC1155',
+            'UniSwap v2',
+            'Стейкинг',
+            'Маркетплейс',
+            'DAO',
+            'Bridge',
+            'Upgradble contract',
+            'Flash loan'
+        ]
     }
 ]);
 </script>
 
 <template>
-    <div class="bg-[#181818] w-screen">
+    <div class="w-screen bg-[#181818]">
         <section class="container flex gap-[60px] py-[180px]" id="education">
             <div>
                 <h2 class="mb-8"><span class="text-[#30A2FF]">Программа обучения —</span> 9 месяцев</h2>
@@ -77,14 +106,24 @@ const accordion = ref([
             </div>
             <div>
                 <template v-for="(item, idx) of accordion" :key="item.summary">
-                    <button class="block w-[700px] bg-[#1D1D1D] text-3xl py-4 px-6 mb-1 last:mb-0 text-left whitespace-nowrap relative after:absolute after:border-r-2 after:border-b-2 after:w-6 after:h-6 after:right-6 after:rotate-45 active:scale-[.98] transition-transform" @click="item.isOpen = !item.isOpen">Section {{ idx }}: {{ item.summary }}</button>
-                    <div class="py-4 px-6 text-2xl" v-if="item.isOpen">{{ item.details }}</div>
+                    <!-- after:absolute after:border-r-2 after:border-b-2 after:w-6 after:h-6 after:right-6 after:rotate-45  -->
+                    <button
+                        class="relative mb-1 block w-[700px] whitespace-nowrap bg-[#1D1D1D] py-4 px-6 text-left text-3xl transition-transform last:mb-0 active:scale-[.98]"
+                        @click="item.isOpen = !item.isOpen">
+                        Section {{ idx }}: {{ item.summary }}
+                        <IconArrowDown
+                            v-if="item.details || item.list"
+                            :active="item.isOpen"
+                            class="absolute top-1/2 right-[20px] -translate-y-1/2" />
+                    </button>
+                    <div class="py-4 px-6 text-2xl" v-if="item.isOpen && item.details">{{ item.details }}</div>
+                    <ul class="list-disc py-4 px-6 text-2xl" v-if="item.isOpen && item.list">
+                        <li v-for="i in item.list" :key="i">{{ i }}</li>
+                    </ul>
                 </template>
             </div>
         </section>
     </div>
 </template>
-
-
 
 <style scoped></style>

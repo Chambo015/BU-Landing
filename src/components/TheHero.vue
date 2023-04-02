@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue';
 import { inView, animate } from 'motion';
 
 import IconLogo from './icons/IconLogo.vue';
-import IconSaleBg from './icons/IconSaleBg.vue';
+//import IconSaleBg from './icons/IconSaleBg.vue';
 import IconStarOctagram from './icons/IconStarOctagram.vue';
 import IconStarHexagram from './icons/IconStarHexagram.vue';
 import IconStarCross from './icons/IconStarCross.vue';
@@ -156,8 +156,12 @@ onMounted(() => {
                     <IconStarHexagram class="absolute left-[25%] bottom-0 w-[44px]" />
                 </div>
                 <!-- --- -->
-                <div ref="saleRef" class="absolute z-50 right-0 w-[190px] h-[190px] aspect-square flex items-center justify-center isolate"><IconSaleBg class="absolute inset-0" />
-                <span class="text-[40px] font-bold relative z-10 text-[#424242] rotate-[25deg]">-25%</span></div>
+                <!-- Sale -->
+               <!-- <div ref="saleRef" class="absolute z-50 right-0 w-[190px] h-[190px] aspect-square flex items-center justify-center isolate">
+                    <IconSaleBg class="absolute inset-0" />
+                    <span class="text-[40px] font-bold relative z-10 text-[#424242] rotate-[25deg]">-25%</span>
+                </div> -->
+                <!-- --- -->
                 <img
                     ref="imgRef"
                     :src="blockchainImg"

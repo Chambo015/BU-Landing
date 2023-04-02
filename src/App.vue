@@ -13,7 +13,7 @@ import TheLead from './components/TheLead.vue';
 import TheSkillsDev from './components/TheSkillsDev.vue';
 import TheStudentList from './components/TheStudentList.vue';
 import TheTeam from './components/TheTeam.vue';
-import TheWorkShops from './components/TheWorkShops.vue';
+// import TheWorkShops from './components/TheWorkShops.vue';
 import {animate, inView} from 'motion';
 
 
@@ -37,7 +37,7 @@ onMounted(() => {
     <TheCases />
     <TheSkillsDev />
     <TheLead />
-    <TheWorkShops />
+   <!--  <TheWorkShops /> -->
     <TheEducationLists />
     <TheCertificates />
     <TheTeam />
