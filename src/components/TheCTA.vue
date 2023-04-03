@@ -26,32 +26,40 @@
                         <p class="text-center text-[40px] font-medium flex-grow">Рассрочка  0 • 0 • 12</p>
                     </div>
                 </div>
-                <div class="bg-[#1D1D1D] w-[600px] p-10">
+                <form class="bg-[#1D1D1D] w-[600px] p-10" @submit="onSubmitHandler">
                  
                         <h4 class="mb-10 text-[40px] font-medium">Заказать звонок от BU</h4>
-                        <input type="text" placeholder="Имя и Фамилия" class="bg-[#2B2B2B] rounded text-2xl py-2 px-4 w-full mb-10 ">
-                        <input type="text" placeholder="Номер телефона" class="bg-[#2B2B2B] rounded text-2xl py-2 px-4 w-full mb-10 ">
-                        <input type="email" placeholder="Электронная почта" class="bg-[#2B2B2B] rounded text-2xl py-2 px-4 w-full mb-10 ">
-                        
+                        <input v-model="form.name" required minlength="3" type="text" placeholder="Имя и Фамилия" class="bg-[#2B2B2B] rounded text-2xl py-2 px-4 w-full mb-10">
+                        <input pattern="[+]\d-\(\d{3}\)-\d{3}-\d{2}-\d{2}" validationMessage="eeeeeee" v-model="form.phone" required v-maska="maskBinded" data-maska="+#-(###)-###-##-##" title="+7-(7XX)-XXX-XX-XX" type="text" placeholder="Номер телефона" class="bg-[#2B2B2B] rounded text-2xl py-2 px-4 w-full mb-10 ">
+                        <input v-model="form.email" required type="email" placeholder="Электронная почта" class="bg-[#2B2B2B] rounded text-2xl py-2 px-4 w-full mb-10 ">
                         <AppButton label="Записаться" />
                         <p class="mt-10">Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования Платформой</p>
              
-                </div>
+                </form>
             </div>
         </div>
     </section>
 </template>
 
-<script>
+<script setup>
+import {reactive} from 'vue';
 import AppButton from './AppButton.vue';
 import IconKaspiBank from './icons/IconKaspiBank.vue';
+import { vMaska } from "maska"
 
-export default {
-    setup() {
-        return {};
-    },
-    components: { AppButton, IconKaspiBank }
-};
+const maskBinded = reactive({})
+const form = reactive({
+    name: '',
+    phone: '',
+    email: ''
+})
+
+const onSubmitHandler = (e) => {
+    e.preventDefault()
+    console.log(form)
+    console.log(maskBinded)
+}
+
 </script>
 
 <style lang="scss" scoped></style>

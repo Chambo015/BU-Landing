@@ -32,7 +32,7 @@ import {computed, ref} from 'vue'
 
 
 const table = ref(null)
-const { x, y, isScrolling, arrivedState, directions } = useScroll(table)
+const { arrivedState } = useScroll(table)
 const bottomArrived = computed(() => arrivedState.bottom ? 0 : 1)
 const topArrived = computed(() => arrivedState.top ? 0 : 1)
 

@@ -12,6 +12,12 @@
                 </div>
             </div>
         </div>
+        <div class="mt-10 relative z-30">
+            <button class="rotate-180 mr-4" @click="slider.prev()"><IconArrowRight :disabled="current === 0" /></button>
+            <button @click="() => slider.next()">
+                <IconArrowRight :disabled="disableNext" />
+            </button>
+        </div>
     </section>
 </template>
 
@@ -19,6 +25,8 @@
 import {useKeenSlider} from 'keen-slider/vue';
 import TheStardust from './Stardust/TheStardust.vue';
 import IconStarHexagram from './icons/IconStarHexagram.vue';
+import IconArrowRight from './icons/IconArrowRight.vue';
+import {onMounted, ref, watchEffect} from 'vue';
 
 export default {
     data: () => ({
@@ -52,20 +60,50 @@ export default {
                 name: 'Алан',
                 position: 'Куратор',
                 photo: '/profile5.png'
-            }
+            },
+            {
+                id: 6,
+                name: 'Арман',
+                position: 'Менеджер',
+                photo: '/profile6.png'
+            },
+            {
+                id: 7,
+                name: 'Абиш',
+                position: 'СОО',
+                photo: '/profile7.png'
+            },
+            {
+                id: 8,
+                name: 'нуркелсн',
+                position: 'НФТ',
+                photo: '/profile8.png'
+            },
+            
         ]
     }),
     setup() {
-        const [container] = useKeenSlider({
+        const current = ref(0);
+        const [container, slider] = useKeenSlider({
             mode: "snap",
             slides: {
                 perView: "auto",
                 spacing: 40
             },
+            initial: current.value,
+            slideChanged: (s) => {
+                current.value = s.track.details.rel;
+            },
         });
-        return { container };
+        const disableNext = ref(false)
+        onMounted(() => {
+            watchEffect(() => {
+                disableNext.value = slider.value.track.details.maxIdx === current.value
+            })
+        })
+        return { container, disableNext, current, slider };
     },
-    components: { TheStardust, IconStarHexagram }
+    components: { TheStardust, IconStarHexagram, IconArrowRight }
 }
 </script>
 
