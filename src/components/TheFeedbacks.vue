@@ -6,7 +6,7 @@
                 class="keen-slider__slide min-w-[640px] cursor-grab pr-10 active:cursor-grabbing"
                 v-for="item in feedbacks"
                 :key="item.id">
-                <div class="flex bg-[#141414] p-10">
+                <div class="flex bg-[#141414] p-10 rounded-md">
                     <img
                         v-if="item.photo"
                         :src="'/' + item.photo"

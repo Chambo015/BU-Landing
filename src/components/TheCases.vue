@@ -2,15 +2,31 @@
 import { animate, inView, stagger } from 'motion';
 import solidityImg from '../assets/solidity.png';
 import TheStardust from './Stardust/TheStardust.vue';
-import IconStarCross from './icons/IconStarCross.vue';
-import IconStarHexagram from './icons/IconStarHexagram.vue';
 import { onMounted, ref } from 'vue';
+import {gsap} from 'gsap';
 
 const salariesRef = ref(null);
 const subTitleRef = ref(null);
 const aboutSolidityRef = ref(null)
 
 onMounted(() => {
+ /*    gsap.fromTo(leftCol.value, {opacity: 0, x: -100} , {opacity: 1, x:0, duration: 1})
+    gsap.fromTo(
+        leftCol.value,
+        {
+            translateY: 0,
+            opacity: 1,
+        },
+        {
+            translateY: -150,
+            opacity: 0,
+            scrollTrigger: {
+           trigger: leftCol.value,
+           start: '50% center',
+           scrub: true
+        }
+        }
+    ); */
     inView(salariesRef.value, ({ target }) => {
         animate(
             target.children,
@@ -53,8 +69,6 @@ onMounted(() => {
             class="-bottom-[300px] -right-[450px] -z-10 h-[890px] rotate-[100deg]"
             background-eclipse="linear-gradient(180deg, rgba(0, 194, 255, 0) 0%, #FF29C3 100%)"
             background-rectangle="linear-gradient(180deg, rgba(24, 75, 255, 0) 0%, #174AFF 100%)" />
-        <IconStarCross class="absolute bottom-0 -right-[100px] w-[74px]" />
-        <IconStarHexagram class="absolute bottom-[200px] -right-[60px] w-[45px]" />
         <h2 class="mb-2">Зарплаты <span class="text-[#30A2FF]">web3</span> специалиста</h2>
         <p ref="subTitleRef" class="mb-14 text-4xl">По данным web3.career, в среднем составляет</p>
         <div ref="salariesRef" class="mb-24 flex justify-between">

@@ -1,7 +1,6 @@
 <template>
     <section class="container pt-[140px] pb-[80px] relative">
         <TheStardust class=" -bottom-[50%] -left-[250px] h-[800px] rotate-90" background-eclipse="linear-gradient(180deg, rgba(0, 194, 255, 0) 0%, #FF29C3 100%)" background-rectangle="linear-gradient(180deg, rgba(24, 75, 255, 0) 0%, #174AFF 100%)" />
-        <IconStarHexagram class="absolute -bottom-[50px] -left-[120px] h-[110px] w-[110px]" />
         <h2 class="mb-[60px]">Состав нашей <span class="text-[#30A2FF]">команды</span></h2>
         <div ref="container" class="keen-slider ">
             <div class="keen-slider__slide cursor-grab active:cursor-grabbing  min-w-[320px]" v-for="person in team" :key="person.id">
@@ -24,7 +23,6 @@
 <script>
 import {useKeenSlider} from 'keen-slider/vue';
 import TheStardust from './Stardust/TheStardust.vue';
-import IconStarHexagram from './icons/IconStarHexagram.vue';
 import IconArrowRight from './icons/IconArrowRight.vue';
 import {onMounted, ref, watchEffect} from 'vue';
 
@@ -103,7 +101,7 @@ export default {
         })
         return { container, disableNext, current, slider };
     },
-    components: { TheStardust, IconStarHexagram, IconArrowRight }
+    components: { TheStardust, IconArrowRight }
 }
 </script>
 

@@ -18,8 +18,6 @@
             </div>
         </div>
         <div class="self-end mb-[5%] bg-[url('/aa6b75ea63944af44c357ca0826a1677.jpeg')] bg-[length:100%_auto] w-[771px] relative z-10 shadow-[13px_-8px_19px_0px_rgba(34,60,80,0.2)] before:block before:pt-[calc(100%/1.4)]">
-            <IconStarHexagram class="w-[60px] absolute right-[20%] -top-[20%]" />
-            <IconStarCross class="absolute w-[110px] -right-[80px] -top-[70px]" />
         </div>
 
     </section>
@@ -29,14 +27,12 @@
 import IconLogo from './icons/IconLogo.vue';
 import IconAstanaHub from './icons/IconAstanaHub.vue';
 import TheStardust from './Stardust/TheStardust.vue';
-import IconStarCross from './icons/IconStarCross.vue';
-import IconStarHexagram from './icons/IconStarHexagram.vue';
 
 export default {
     setup() {
         return {};
     },
-    components: { IconLogo, IconAstanaHub, TheStardust, IconStarCross, IconStarHexagram }
+    components: { IconLogo, IconAstanaHub, TheStardust, }
 };
 </script>
 
