@@ -6,7 +6,9 @@
             v-for="app in messageApps"
             :key="app.id"
             :style="{ backgroundColor: app.color }"
-            :title="app.label">
+            :title="app.label"
+            :href="app.href"
+            target="_blank">
             <component :is="app.icon" />
         </a>
     </div>
@@ -39,12 +41,14 @@ const messageApps = [
         label: 'Написать в Whatsapp',
         color: '#42E85F',
         icon: IconWhatsapp,
+        href: 'https://api.whatsapp.com/send?phone=77769519099'
     },
     {
         id: 1,
         label: 'Написать в Telegram',
         color: '#35A9E6',
         icon: IconTelegram,
+        href: 'https://t.me/Kairkuka'
     },
     {
         id: 2,
