@@ -8,7 +8,7 @@ import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
 
 
 import './assets/main.css'
-// import '@/utils/firebase'
+import '@/utils/firebase'
 
 // gsap.registerPlugin(ScrollTrigger);
 
