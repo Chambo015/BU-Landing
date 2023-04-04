@@ -2,7 +2,7 @@
     <section class="bg-[#181818]">
         <div class="container py-36" id="forms">
             <h2 class="mb-20"><span class="text-[#30A2FF]">Записаться</span> на курс</h2>
-            <div class="flex justify-center gap-10">
+            <div class="flex 2xl:flex-row flex-col justify-center gap-10">
                 <div class="w-[600px] overflow-hidden rounded-md bg-[#1D1D1D]">
                     <div class="p-10">
                         <h4 class="mb-10 text-[40px] font-medium">Стоимость курса</h4>

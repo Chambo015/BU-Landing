@@ -89,11 +89,11 @@ const accordion = ref([
 
 <template>
     <div class="w-screen bg-[#181818]">
-        <section class="container flex gap-[60px] py-[180px]" id="education">
+        <section class="container flex 2xl:flex-row flex-col 2xl:gap-[60px] gap-9 2xl:py-[180px] py-12" id="education">
             <div>
-                <h2 class="mb-8"><span class="text-[#30A2FF]">Программа обучения —</span> 9 месяцев</h2>
-                <p class="mb-[60px] text-[40px] leading-tight">220 часов теории и 250 часов практики</p>
-                <div class="space-y-6 text-2xl leading-none">
+                <h2 class="lg:mb-8 mb-4"><span class="text-[#30A2FF]">Программа обучения —</span><br class="sm:hidden" /> 9 месяцев</h2>
+                <p class="2xl:mb-[60px] mb-6 2xl:text-[40px] text-base leading-tight font-medium">220 часов теории и 250 часов практики</p>
+                <div class="2xl:space-y-6 2xl:text-2xl text-sm space-y-4 leading-tight">
                     <p>
                         Вебинары, на которых вы можете задать вопросы, проводятся по будням 3 раза в неделю после 16:00
                         по времени Астаны. Для комфортных тренировок вам понадобится 6-8 часов в неделю.
@@ -107,16 +107,16 @@ const accordion = ref([
             <div>
                 <div v-auto-animate v-for="(item, idx) of accordion" :key="item.summary" class="mb-1">
                     <button
-                        class="relative block w-[700px] whitespace-nowrap bg-[#1D1D1D] py-4 px-6 text-left text-3xl transition-transform last:mb-0 active:scale-[.98]"
+                        class="relative block 2xl:w-[700px] w-full whitespace-nowrap bg-[#1D1D1D] lg:py-4 py-2 2xl:px-6 px-3 text-left text-sm 2xl:text-3xl transition-transform last:mb-0 active:scale-[.98]"
                         @click="item.isOpen = !item.isOpen">
                         Section {{ idx }}: {{ item.summary }}
                         <IconArrowDown
                             v-if="item.details || item.list"
                             :active="item.isOpen"
-                            class="absolute top-1/2 right-[20px] -translate-y-1/2" />
+                            class="absolute top-1/2 2xl:right-[20px] 2xl:h-[40px] 2xl:w-[40px] -translate-y-1/2 right-3 h-[14px] w-[14px]" />
                     </button>
-                    <div class="py-4 px-6 text-2xl" v-if="item.isOpen && item.details">{{ item.details }}</div>
-                    <ul class="list-disc py-4 pr-6 text-2xl pl-7" v-if="item.isOpen && item.list">
+                    <div class="py-4 px-6 2xl:text-2xl text-sm" v-if="item.isOpen && item.details">{{ item.details }}</div>
+                    <ul class="list-disc py-4 pr-6 2xl:text-2xl text-sm pl-7" v-if="item.isOpen && item.list">
                         <li v-for="i in item.list" :key="i">{{ i }}</li>
                     </ul>
                 </div>

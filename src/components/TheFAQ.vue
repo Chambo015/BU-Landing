@@ -1,5 +1,5 @@
 <script>
-import { defineComponent} from 'vue';
+import { defineComponent } from 'vue';
 import TheStardust from './Stardust/TheStardust.vue';
 import IconArrowDown from './icons/IconArrowDown.vue';
 
@@ -433,7 +433,7 @@ export default defineComponent({
 
 <template>
     <section class="overflow-hidden">
-        <div class="container relative pt-[120px] pb-[180px]">
+        <div class="container relative pt-[120px] pb-20 2xl:pb-[180px] lg:pb-[110px]">
             <TheStardust
                 class="-left-[580px] -bottom-[440px] h-[780px] rotate-45"
                 blur-filter="170px"
@@ -444,19 +444,27 @@ export default defineComponent({
                 blur-filter="200px"
                 background-rectangle="linear-gradient(180deg, rgba(24, 255, 158, 0) 0%, #17FFE3 100%)"
                 background-eclipse="linear-gradient(180deg, #2C4982 0%, #2CD095 100%)" />
-            <h2 class="mb-[60px]"><span class="text-[#30A2FF]">Отвечаем</span> на вопросы</h2>
+            <h2 class="mb-7 2xl:mb-[60px]"><span class="text-[#30A2FF]">Отвечаем</span> на вопросы</h2>
 
-            <div v-auto-animate v-for="faq of FAQArray" :key="faq.id" class="border-t-2 border-white last-of-type:border-b-2">
-                <div class="relative cursor-pointer py-5 px-[50px]" @click="faq.isOpen = !faq.isOpen">
-                    <button class="relative block text-[32px] font-medium">
+            <div
+                v-auto-animate
+                v-for="faq of FAQArray"
+                :key="faq.id"
+                class="border-t-[1px] border-white last-of-type:border-b-[1px] 2xl:border-t-2 last-of-type:2xl:border-b-2">
+                <div
+                    class="relative cursor-pointer py-2 pr-[20px] md:pl-2 2xl:py-5 2xl:pl-[50px] 2xl:pr-[50px]"
+                    @click="faq.isOpen = !faq.isOpen">
+                    <button class="relative block text-left text-xs font-medium md:text-sm lg:text-lg 2xl:text-[32px]">
                         {{ faq.question }}
                     </button>
                     <IconArrowDown
                         :active="faq.isOpen"
-                        class="absolute top-1/2 right-10 h-[40px] w-[40px] -translate-y-1/2" />
+                        class="absolute top-1/2 right-3 h-[14px] w-[14px] -translate-y-1/2 2xl:right-10 2xl:h-[40px] 2xl:w-[40px] lg:h-[20px] lg:w-[20px]" />
                 </div>
-                <div class="space-y-4 py-4 px-6 text-2xl text-white/95" v-if="faq.isOpen" v-html="faq.answer">
-                </div>
+                <div
+                    class="space-y-4 py-4 px-1 text-xs text-white/80 md:text-sm 2xl:px-6 2xl:text-2xl lg:text-base"
+                    v-if="faq.isOpen"
+                    v-html="faq.answer"></div>
             </div>
         </div>
     </section>

@@ -1,8 +1,8 @@
 <template>
-    <div class="fixed bottom-14 right-14 w-[64px] space-y-4">
+    <div class="fixed bottom-7 z-50 right-3 2xl:bottom-14 2xl:right-14 w-[64px] space-y-4">
         <a
             ref="chatsRef"
-            class="flex h-[64px] w-[64px] cursor-pointer items-center justify-center rounded opacity-60 transition-opacity hover:opacity-100"
+            class="flex 2xl:h-[64px] 2xl:w-[64px] w-[40px] h-[40px] 2xl:p-0 p-[2px] cursor-pointer items-center justify-center rounded opacity-60 transition-opacity hover:opacity-100"
             v-for="app in messageApps"
             :key="app.id"
             :style="{ backgroundColor: app.color }"
@@ -16,7 +16,7 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
-import IconConsultation from './icons/IconConsultation.vue';
+// import IconConsultation from './icons/IconConsultation.vue';
 import IconTelegram from './icons/IconTelegram.vue';
 import IconWhatsapp from './icons/IconWhatsapp.vue';
 
@@ -41,21 +41,21 @@ const messageApps = [
         label: 'Написать в Whatsapp',
         color: '#42E85F',
         icon: IconWhatsapp,
-        href: 'https://api.whatsapp.com/send?phone=77769519099'
+        href: 'https://api.whatsapp.com/send?phone=77081056283'
     },
     {
         id: 1,
         label: 'Написать в Telegram',
         color: '#35A9E6',
         icon: IconTelegram,
-        href: 'https://t.me/Kairkuka'
+        href: 'https://t.me/bueth'
     },
-    {
+/*     {
         id: 2,
         label: 'Получить консультацию',
         color: '#1495FE',
         icon: IconConsultation,
-    },
+    }, */
 ];
 </script>
 

@@ -1,12 +1,12 @@
 <template>
     <footer class="bg-black">
          <div
-                class="container 2xl:pt-[60px] pt-4 pb-16 duration-1000 flex justify-between items-center z-10 relative"
+                class="container 2xl:pt-[60px] pt-4 pb-16 duration-1000 flex 2xl:justify-between justify-center items-center z-10 relative"
                 v-motion="{
                     initial: { opacity: 0 },
                     enter: { opacity: 1 },
                 }">
-                <IconLogo class="2xl:w-[200px] w-20" />
+                <IconLogo class="2xl:w-[200px] w-24 md:w-32" />
             </div>
     </footer>
 </template>
