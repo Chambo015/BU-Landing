@@ -5,7 +5,7 @@
         <div ref="container" class="keen-slider ">
             <div class="keen-slider__slide cursor-grab active:cursor-grabbing  min-w-[320px]" v-for="person in team" :key="person.id">
                 <div class="flex flex-col items-center bg-[#141414] py-10 px-7">
-                        <div class="mb-5 w-[200px] h-[200px] rounded-full" :style="{background: `url('${person.photo}') center / cover`}"></div>
+                        <div class="mb-5 w-[200px] h-[200px] rounded-full" :style="{background: `url(.'${person.photo}') center / cover`}"></div>
                         <div class="mb-5 text-[32px] whitespace-nowrap">{{person.name}}</div>
                         <p class="text-[36px] font-medium whitespace-nowrap">{{ person.position }}</p>
                 </div>

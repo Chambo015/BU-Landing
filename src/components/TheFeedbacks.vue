@@ -9,7 +9,7 @@
                 <div class="flex bg-[#141414] p-10 rounded-md">
                     <img
                         v-if="item.photo"
-                        :src="'/' + item.photo"
+                        :src="'./' + item.photo"
                         alt="user"
                         width="56"
                         height="56"
