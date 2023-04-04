@@ -1,39 +1,39 @@
 <template>
-    <section class="container relative py-36">
+    <section class="container relative 2xl:py-36 py-9">
         <h2 class="mb-10">Что о нас <span class="text-[#30A2FF]">студенты думают:</span></h2>
         <div ref="container" class="keen-slider">
             <div
-                class="keen-slider__slide min-w-[640px] cursor-grab pr-10 active:cursor-grabbing"
+                class="keen-slider__slide 2xl:min-w-[640px] min-w-[90%] cursor-grab active:cursor-grabbing"
                 v-for="item in feedbacks"
                 :key="item.id">
-                <div class="flex bg-[#141414] p-10 rounded-md">
+                <div class="flex bg-[#141414] 2xl:p-10 p-5 rounded-md">
                     <img
                         v-if="item.photo"
                         :src="'./' + item.photo"
                         alt="user"
                         width="56"
                         height="56"
-                        class="mr-5 aspect-square self-start" />
+                        class="2xl:mr-5 mr-2 2xl:w-[56px] 2xl:h-[56px] w-[30px] h-[30px] aspect-square self-start" />
                     <span
                         v-else
                         :style="{ backgroundColor: item.color }"
-                        class="mr-5 aspect-square h-[56px] w-[56px] self-start rounded-full text-center text-2xl font-bold leading-[56px]"
+                        class="2xl:mr-5 mr-2 aspect-square 2xl:w-[56px] 2xl:h-[56px] w-[30px] h-[30px] self-start rounded-full text-center 2xl:text-2xl font-bold 2xl:leading-[56px] leading-[30px] text-xs"
                         v-once
                         >{{ getInitialsName(item.user) }}</span
                     >
                     <div>
-                        <div class="mb-5 text-[26px] font-medium" :style="{ color: item.color }" v-once>
+                        <div class="2xl:mb-5 mb-2 2xl:text-[26px] text-base font-medium" :style="{ color: item.color }" v-once>
                             {{ item.user }}
                         </div>
-                        <p class="text-2xl" v-once>{{ item.text }}</p>
+                        <p class="2xl:text-2xl text-sm" v-once>{{ item.text }}</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="mt-10">
-            <button class="rotate-180 mr-4" @click="slider.prev()"><IconArrowRight :disabled="current === 0" /></button>
+        <div class="mt-10 z-30">
+            <button class="rotate-180 mr-4" @click="slider.prev()"><IconArrowRight class="2xl:h-[80px] h-[40px] 2xl:w-[80px] w-[40px]" :disabled="current === 0" /></button>
             <button @click="slider.next()">
-                <IconArrowRight :disabled="disableNext" />
+                <IconArrowRight class="2xl:h-[80px] h-[40px] 2xl:w-[80px] w-[40px]" :disabled="disableNext" />
             </button>
         </div>
     </section>
@@ -43,7 +43,8 @@
 import { useKeenSlider } from 'keen-slider/vue'; // import from 'keen-slider/vue.es' to get an ES module
 import { generateRandomLightColor } from '@/utils/randomColor';
 import IconArrowRight from './icons/IconArrowRight.vue';
-import {  onMounted, ref,  watchEffect } from 'vue';
+import {  computed, onMounted, ref,  watchEffect } from 'vue';
+import {useMediaQuery} from '@vueuse/core';
 
 export default {
     components: { IconArrowRight },
@@ -100,11 +101,20 @@ export default {
         },
     },
     setup() {
+        const is2xl = useMediaQuery('(min-width: 1536px)')
+        const spacingSlider = computed(() => {
+            if(is2xl.value) {
+                return 40
+            }
+            return 20
+        })
+
         const current = ref(0);
         const [container, slider] = useKeenSlider({
             mode: 'free-snap',
             slides: {
                 perView: 'auto',
+                spacing: spacingSlider.value
             },
             initial: current.value,
             slideChanged: (s) => {

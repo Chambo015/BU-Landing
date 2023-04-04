@@ -1,20 +1,20 @@
 <template>
-    <section class="container pt-[140px] pb-[80px] relative">
+    <section class="container 2xl:pt-[140px] 2xl:pb-[80px] pt-8 pb-8 relative">
         <TheStardust class=" -bottom-[50%] -left-[250px] h-[800px] rotate-90" background-eclipse="linear-gradient(180deg, rgba(0, 194, 255, 0) 0%, #FF29C3 100%)" background-rectangle="linear-gradient(180deg, rgba(24, 75, 255, 0) 0%, #174AFF 100%)" />
-        <h2 class="mb-[60px]">Состав нашей <span class="text-[#30A2FF]">команды</span></h2>
+        <h2 class="2xl:mb-[60px] mb-8 z-50 relative">Состав нашей <span class="text-[#30A2FF]">команды</span></h2>
         <div ref="container" class="keen-slider ">
-            <div class="keen-slider__slide cursor-grab active:cursor-grabbing  min-w-[320px]" v-for="person in team" :key="person.id">
-                <div class="flex flex-col items-center bg-[#141414] py-10 px-7">
-                        <div class="mb-5 w-[200px] h-[200px] rounded-full" :style="{background: `url('${person.photo}') center / cover`}"></div>
-                        <div class="mb-5 text-[32px] whitespace-nowrap">{{person.name}}</div>
-                        <p class="text-[36px] font-medium whitespace-nowrap">{{ person.position }}</p>
+            <div class="keen-slider__slide cursor-grab active:cursor-grabbing rounded-md min-w-[150px] 2xl:min-w-[320px]" v-for="person in team" :key="person.id">
+                <div class="flex flex-col space-y-2 2xl:space-y-5 items-center bg-[#141414] 2xl:py-10 py-4 px-7">
+                        <div class=" h-[80px] w-[80px] 2xl:w-[200px] 2xl:h-[200px] rounded-full" :style="{background: `url('${person.photo}') center / cover`}"></div>
+                        <div class=" 2xl:text-[32px] text-base whitespace-nowrap">{{person.name}}</div>
+                        <p class="2xl:text-[36px] text-lg font-medium whitespace-nowrap">{{ person.position }}</p>
                 </div>
             </div>
         </div>
         <div class="mt-10 relative z-30">
-            <button class="rotate-180 mr-4" @click="slider.prev()"><IconArrowRight :disabled="current === 0" /></button>
+            <button class="rotate-180 mr-4" @click="slider.prev()"><IconArrowRight class="2xl:h-[80px] h-[40px] 2xl:w-[80px] w-[40px]" :disabled="current === 0" /></button>
             <button @click="() => slider.next()">
-                <IconArrowRight :disabled="disableNext" />
+                <IconArrowRight class="2xl:h-[80px] 2xl:w-[80px] w-[40px] h-[40px]" :disabled="disableNext" />
             </button>
         </div>
     </section>
@@ -24,7 +24,10 @@
 import {useKeenSlider} from 'keen-slider/vue';
 import TheStardust from './Stardust/TheStardust.vue';
 import IconArrowRight from './icons/IconArrowRight.vue';
-import {onMounted, ref, watchEffect} from 'vue';
+import {computed, onMounted, ref, watchEffect} from 'vue';
+import { useMediaQuery } from '@vueuse/core'
+
+
 
 export default {
     data: () => ({
@@ -81,12 +84,19 @@ export default {
         ]
     }),
     setup() {
+        const is2xl = useMediaQuery('(min-width: 1536px)')
+        const spacingSlider = computed(() => {
+            if(is2xl.value) {
+                return 40
+            }
+            return 20
+        })
         const current = ref(0);
         const [container, slider] = useKeenSlider({
             mode: "snap",
             slides: {
                 perView: "auto",
-                spacing: 40
+                spacing: spacingSlider.value
             },
             initial: current.value,
             slideChanged: (s) => {

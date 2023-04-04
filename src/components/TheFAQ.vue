@@ -433,7 +433,7 @@ export default defineComponent({
 
 <template>
     <section class="overflow-hidden">
-        <div class="container relative pt-[120px] pb-20 2xl:pb-[180px] lg:pb-[110px]">
+        <div class="container relative pt-[70px] pb-20 2xl:pb-[180px] lg:pb-[110px]">
             <TheStardust
                 class="-left-[580px] -bottom-[440px] h-[780px] rotate-45"
                 blur-filter="170px"
@@ -452,9 +452,9 @@ export default defineComponent({
                 :key="faq.id"
                 class="border-t-[1px] border-white last-of-type:border-b-[1px] 2xl:border-t-2 last-of-type:2xl:border-b-2">
                 <div
-                    class="relative cursor-pointer py-2 pr-[20px] md:pl-2 2xl:py-5 2xl:pl-[50px] 2xl:pr-[50px]"
+                    class="relative cursor-pointer py-3 pr-[25px] md:pl-2 2xl:py-5 2xl:pl-[50px] 2xl:pr-[50px]"
                     @click="faq.isOpen = !faq.isOpen">
-                    <button class="relative block text-left text-xs font-medium md:text-sm lg:text-lg 2xl:text-[32px]">
+                    <button class="relative block text-left text-sm font-medium md:text-sm lg:text-lg 2xl:text-[32px]">
                         {{ faq.question }}
                     </button>
                     <IconArrowDown

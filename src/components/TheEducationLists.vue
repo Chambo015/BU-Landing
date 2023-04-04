@@ -1,6 +1,7 @@
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import IconArrowDown from './icons/IconArrowDown.vue';
+import {animate, inView, stagger} from 'motion';
 
 const accordion = ref([
     {
@@ -85,6 +86,37 @@ const accordion = ref([
         ]
     }
 ]);
+
+const accordionContainer = ref(null)
+const leftColRef = ref(null) 
+
+onMounted(() => {
+    inView(
+        accordionContainer.value,
+        ({ target }) => {
+            animate(
+                target.children,
+                { y: [100, 0], opacity: [0, 1] },
+                {
+                    delay: stagger(0.2, { start: 0.5 }),
+                    duration: 0.5,
+                    easing: [0.22, 0.03, 0.26, 1],
+                }
+            );
+        },
+        { margin: '100px 0px' }
+    );
+    inView(leftColRef.value, ({ target }) => {
+        animate(
+            target,
+            {
+                transform: ['translateX(-100px)', 'none'],
+                opacity: [0, 1],
+            },
+            {duration: 1, delay: 0.5}
+        );
+    });
+})
 </script>
 
 <template>
@@ -92,19 +124,21 @@ const accordion = ref([
         <section class="container flex 2xl:flex-row flex-col 2xl:gap-[60px] gap-9 2xl:py-[180px] py-12" id="education">
             <div>
                 <h2 class="lg:mb-8 mb-4"><span class="text-[#30A2FF]">Программа обучения —</span><br class="sm:hidden" /> 9 месяцев</h2>
-                <p class="2xl:mb-[60px] mb-6 2xl:text-[40px] text-base leading-tight font-medium">220 часов теории и 250 часов практики</p>
-                <div class="2xl:space-y-6 2xl:text-2xl text-sm space-y-4 leading-tight">
-                    <p>
-                        Вебинары, на которых вы можете задать вопросы, проводятся по будням 3 раза в неделю после 16:00
-                        по времени Астаны. Для комфортных тренировок вам понадобится 6-8 часов в неделю.
-                    </p>
-                    <p>
-                        Материалы курса не потеряют своей актуальности — мы обновляем лекции, и они автоматически
-                        загружаются в ваш личный кабинет.
-                    </p>
+                <div ref="leftColRef">
+                    <p class="2xl:mb-[60px] mb-6 2xl:text-[40px] text-base leading-tight font-medium">220 часов теории и 250 часов практики</p>
+                    <div class="2xl:space-y-6 2xl:text-2xl text-sm space-y-4 leading-tight">
+                        <p>
+                            Вебинары, на которых вы можете задать вопросы, проводятся по будням 3 раза в неделю после 16:00
+                            по времени Астаны. Для комфортных тренировок вам понадобится 6-8 часов в неделю.
+                        </p>
+                        <p>
+                            Материалы курса не потеряют своей актуальности — мы обновляем лекции, и они автоматически
+                            загружаются в ваш личный кабинет.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div>
+            <div ref="accordionContainer">
                 <div v-auto-animate v-for="(item, idx) of accordion" :key="item.summary" class="mb-1">
                     <button
                         class="relative block 2xl:w-[700px] w-full whitespace-nowrap bg-[#1D1D1D] lg:py-4 py-2 2xl:px-6 px-3 text-left text-sm 2xl:text-3xl transition-transform last:mb-0 active:scale-[.98]"
