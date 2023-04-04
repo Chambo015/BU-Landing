@@ -75,7 +75,6 @@ import { vMaska } from 'maska';
 
 import { getDatabase, ref as refFirebase, set, push } from 'firebase/database';
 
-
 async function writeUserData(name, email, phone) {
     try {
         const db = getDatabase();
