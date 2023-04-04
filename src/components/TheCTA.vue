@@ -76,9 +76,31 @@ import { vMaska } from 'maska';
 import { getDatabase, ref as refFirebase, set, push } from 'firebase/database';
 
 
+import { initializeApp } from "firebase/app";
+
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://firebase.google.com/docs/web/learn-more#config-object
+const firebaseConfig = {
+    apiKey: import.meta.env.VITE_API_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_API_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_API_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_API_FIREBASE_STORAGE_BUCKET ,
+  messagingSenderId:import.meta.env.VITE_API_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_API_FIREBASE_APP_ID,
+  databaseURL: import.meta.env.VITE_API_FIREBASE_DATABASE_URL
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+// Initialize Realtime Database and get a reference to the service
+const db = getDatabase(app);
+
+
 async function writeUserData(name, email, phone) {
     try {
-        const db = getDatabase();
+       /*  const db = getDatabase(); */
         const postListRef = refFirebase(db, 'feedbackRequest');
         const newPostRef = push(postListRef);
         await set(newPostRef, {
