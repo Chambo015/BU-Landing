@@ -11,11 +11,10 @@ import TheFooter from './components/TheFooter.vue';
 import TheHero from './components/TheHero.vue';
 import TheLead from './components/TheLead.vue';
 import TheSkillsDev from './components/TheSkillsDev.vue';
-import TheStudentList from './components/TheStudentList.vue';
+/* import TheStudentList from './components/TheStudentList.vue'; */
 import TheTeam from './components/TheTeam.vue';
 // import TheWorkShops from './components/TheWorkShops.vue';
 import {animate, inView} from 'motion';
-
 
 onMounted(() => {
     inView('h2', ({ target }) => {
@@ -43,7 +42,7 @@ onMounted(() => {
     <TheTeam />
     <TheFeedbacks />
     <TheCTA />
-    <TheStudentList />
+<!--     <TheStudentList /> -->
     <TheFAQ />
     <TheFooter />
   </main>

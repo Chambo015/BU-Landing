@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-[#F4E4B6] text-black text-4xl flex w-screen overflow-hidden">
+    <section class="bg-[#F4E4B6] text-black text-lg 2xl:text-4xl flex w-screen overflow-hidden">
         <div class="whitespace-nowrap inner-line bg-[#F4E4B6] relative py-1">
             {{ text }}<span class="ml-12 mr-9">{{ text }}</span>
             {{ text }}<span class="ml-12 mr-9">{{ text }}</span>

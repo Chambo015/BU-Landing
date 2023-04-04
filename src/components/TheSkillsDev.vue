@@ -4,7 +4,7 @@
            <a href="#hero"> <span class="text-[#30A2FF]">На что способен</span> Blockchain Dev?</a>
         </h2>
 
-        <div class="flex justify-around [&>div]:max-w-[420px] ">
+        <div class="flex 2xl:flex-row flex-col justify-around [&>div]:max-w-[420px] ">
             <div class="flex flex-col items-center group hover:shadow-[0px_0px_65px_-6px_rgba(172,108,255,0.7)] py-7 px-5 transition-shadow rounded-md duration-500">
                 <IconSmartContract class="fill-white w-32 h-32 group-hover:fill-[#AC6CFF] transition-colors" />
                 <p class="text-center text-4xl leading-none">Пишет и запускает смарт-контракты (программы) в сеть блокчейна</p>

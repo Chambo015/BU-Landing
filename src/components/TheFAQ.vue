@@ -1,5 +1,5 @@
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent} from 'vue';
 import TheStardust from './Stardust/TheStardust.vue';
 import IconArrowDown from './icons/IconArrowDown.vue';
 
@@ -446,7 +446,7 @@ export default defineComponent({
                 background-eclipse="linear-gradient(180deg, #2C4982 0%, #2CD095 100%)" />
             <h2 class="mb-[60px]"><span class="text-[#30A2FF]">Отвечаем</span> на вопросы</h2>
 
-            <div v-for="faq of FAQArray" :key="faq.id" class="border-t-2 border-white last-of-type:border-b-2">
+            <div v-auto-animate v-for="faq of FAQArray" :key="faq.id" class="border-t-2 border-white last-of-type:border-b-2">
                 <div class="relative cursor-pointer py-5 px-[50px]" @click="faq.isOpen = !faq.isOpen">
                     <button class="relative block text-[32px] font-medium">
                         {{ faq.question }}
@@ -456,7 +456,6 @@ export default defineComponent({
                         class="absolute top-1/2 right-10 h-[40px] w-[40px] -translate-y-1/2" />
                 </div>
                 <div class="space-y-4 py-4 px-6 text-2xl text-white/95" v-if="faq.isOpen" v-html="faq.answer">
-                   
                 </div>
             </div>
         </div>

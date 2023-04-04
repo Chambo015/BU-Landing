@@ -3,30 +3,12 @@ import { animate, inView, stagger } from 'motion';
 import solidityImg from '../assets/solidity.png';
 import TheStardust from './Stardust/TheStardust.vue';
 import { onMounted, ref } from 'vue';
-import {gsap} from 'gsap';
 
 const salariesRef = ref(null);
 const subTitleRef = ref(null);
 const aboutSolidityRef = ref(null)
 
 onMounted(() => {
- /*    gsap.fromTo(leftCol.value, {opacity: 0, x: -100} , {opacity: 1, x:0, duration: 1})
-    gsap.fromTo(
-        leftCol.value,
-        {
-            translateY: 0,
-            opacity: 1,
-        },
-        {
-            translateY: -150,
-            opacity: 0,
-            scrollTrigger: {
-           trigger: leftCol.value,
-           start: '50% center',
-           scrub: true
-        }
-        }
-    ); */
     inView(salariesRef.value, ({ target }) => {
         animate(
             target.children,
@@ -64,34 +46,34 @@ onMounted(() => {
 </script>
 
 <template>
-    <section class="container relative pt-20 pb-24" v-cloak>
+    <section class="container relative 2xl:pt-20 2xl:pb-24 pt-16 pb-16" v-cloak>
         <TheStardust
             class="-bottom-[300px] -right-[450px] -z-10 h-[890px] rotate-[100deg]"
             background-eclipse="linear-gradient(180deg, rgba(0, 194, 255, 0) 0%, #FF29C3 100%)"
             background-rectangle="linear-gradient(180deg, rgba(24, 75, 255, 0) 0%, #174AFF 100%)" />
-        <h2 class="mb-2">Зарплаты <span class="text-[#30A2FF]">web3</span> специалиста</h2>
-        <p ref="subTitleRef" class="mb-14 text-4xl">По данным web3.career, в среднем составляет</p>
-        <div ref="salariesRef" class="mb-24 flex justify-between">
+        <h2 class="2xl:mb-2 mb-7">Зарплаты <span class="text-[#30A2FF]">web3</span> специалиста</h2>
+        <p ref="subTitleRef" class="mb-14 2xl:text-4xl text-sm">По данным web3.career, в среднем составляет</p>
+        <div ref="salariesRef" class="mb-24 flex flex-wrap 2xl:gap-0 gap-12 2xl:justify-between">
             <div>
-                <div class="text-[40px] font-bold leading-tight">3 000 – 3 500 $</div>
-                <p class="text-[32px] leading-tight text-white/50">Blockchain Developer</p>
+                <div class="2xl:text-[40px] text-lg font-bold leading-tight 2xl:mb-0 mb-1">3 000 – 3 500 $</div>
+                <p class="2xl:text-[32px] text-sm leading-tight text-white/50">Blockchain Developer</p>
             </div>
             <div>
-                <div class="text-[40px] font-bold leading-tight">2 000 – 2 500 $</div>
-                <p class="text-[32px] leading-tight text-white/50">Token Audit</p>
+                <div class="2xl:text-[40px] text-lg font-bold leading-tight 2xl:mb-0 mb-1">2 000 – 2 500 $</div>
+                <p class="2xl:text-[32px] text-sm leading-tight text-white/50">Token Audit</p>
             </div>
             <div>
-                <div class="text-[40px] font-bold leading-tight">4 000 – 5 000 $</div>
-                <p class="text-[32px] leading-tight text-white/50">Metaverse Dev</p>
+                <div class="2xl:text-[40px] text-lg font-bold leading-tight 2xl:mb-0 mb-1">4 000 – 5 000 $</div>
+                <p class="2xl:text-[32px] text-sm leading-tight text-white/50">Metaverse Dev</p>
             </div>
             <div>
-                <div class="text-[40px] font-bold leading-tight">1 500 – 2 000 $</div>
-                <p class="text-[32px] leading-tight text-white/50">NFT tokens</p>
+                <div class="2xl:text-[40px] text-lg font-bold leading-tight 2xl:mb-0 mb-1">1 500 – 2 000 $</div>
+                <p class="2xl:text-[32px] text-sm leading-tight text-white/50">NFT tokens</p>
             </div>
         </div>
-        <div ref="aboutSolidityRef" class="relative rounded-lg bg-[#F4E4B6] py-10 px-14">
-            <h3 class="mb-10 text-[64px] font-bold leading-tight text-[#1D1D1D]">Про Solidity</h3>
-            <ul class="ml-10 w-[60%] list-disc space-y-7 text-4xl leading-none text-[#333333]">
+        <div ref="aboutSolidityRef" class="relative rounded-lg bg-[#F4E4B6] 2xl:pt-10 2xl:pb-10 pt-7 pb-32 2xl:px-14 px-9 overflow-hidden">
+            <h3 class="mb-10 2xl:text-[64px] text-2xl font-bold leading-tight text-[#1D1D1D]">Про Solidity</h3>
+            <ul class="2xl:ml-10 2xl:w-[60%] w-[90%] list-disc space-y-7 2xl:text-4xl text-sm leading-none text-[#333333]">
                 <li>Объектно-ориентированный язык программирования смарт-контрактов</li>
                 <li>По синтаксису solidity похож на языки программирование как JavaScript и C++</li>
                 <li>Создан со-основателем Ethereum: Gavin Wood</li>
@@ -103,7 +85,7 @@ onMounted(() => {
                 alt="solidity"
                 width="500"
                 height="500"
-                class="absolute top-1/2 right-10 aspect-square w-1/3 -translate-y-1/2" />
+                class="absolute 2xl:top-1/2 2xl:right-10 2xl:bottom-[none] bottom-0 -right-8 aspect-square w-[40%] 2xl:w-1/3 2xl:-translate-y-1/2" />
         </div>
     </section>
 </template>

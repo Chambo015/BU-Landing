@@ -105,10 +105,9 @@ const accordion = ref([
                 </div>
             </div>
             <div>
-                <template v-for="(item, idx) of accordion" :key="item.summary">
-                    <!-- after:absolute after:border-r-2 after:border-b-2 after:w-6 after:h-6 after:right-6 after:rotate-45  -->
+                <div v-auto-animate v-for="(item, idx) of accordion" :key="item.summary" class="mb-1">
                     <button
-                        class="relative mb-1 block w-[700px] whitespace-nowrap bg-[#1D1D1D] py-4 px-6 text-left text-3xl transition-transform last:mb-0 active:scale-[.98]"
+                        class="relative block w-[700px] whitespace-nowrap bg-[#1D1D1D] py-4 px-6 text-left text-3xl transition-transform last:mb-0 active:scale-[.98]"
                         @click="item.isOpen = !item.isOpen">
                         Section {{ idx }}: {{ item.summary }}
                         <IconArrowDown
@@ -117,10 +116,10 @@ const accordion = ref([
                             class="absolute top-1/2 right-[20px] -translate-y-1/2" />
                     </button>
                     <div class="py-4 px-6 text-2xl" v-if="item.isOpen && item.details">{{ item.details }}</div>
-                    <ul class="list-disc py-4 px-6 text-2xl" v-if="item.isOpen && item.list">
+                    <ul class="list-disc py-4 pr-6 text-2xl pl-7" v-if="item.isOpen && item.list">
                         <li v-for="i in item.list" :key="i">{{ i }}</li>
                     </ul>
-                </template>
+                </div>
             </div>
         </section>
     </div>
