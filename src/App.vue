@@ -26,7 +26,7 @@ onMounted(() => {
             },
             { delay: 0.2, duration: 0.9, easing: [0.17, 0.55, 0.55, 1] }
         );
-    });
+    }, { margin: "-0px 0px -0px 0px"});
   })
 </script>
 
@@ -42,7 +42,7 @@ onMounted(() => {
     <TheTeam />
     <TheFeedbacks />
     <TheCTA />
-<!--     <TheStudentList /> -->
+    <!--     <TheStudentList /> -->
     <TheFAQ />
     <TheFooter />
   </main>

@@ -104,7 +104,7 @@ onMounted(() => {
                 }
             );
         },
-        { margin: '100px 0px' }
+        { margin: '-100px 0px' }
     );
     inView(leftColRef.value, ({ target }) => {
         animate(
@@ -138,9 +138,11 @@ onMounted(() => {
                     </div>
                 </div>
             </div>
-            <div ref="accordionContainer">
+            <div ref="accordionContainer" class="[&>div]:opacity-0">
                 <div v-auto-animate v-for="(item, idx) of accordion" :key="item.summary" class="mb-1">
                     <button
+                        :aria-controls="item.summary"
+                        :aria-expanded="item.isOpen"
                         class="relative block 2xl:w-[700px] w-full whitespace-nowrap bg-[#1D1D1D] lg:py-4 py-2 2xl:px-6 px-3 text-left text-sm 2xl:text-3xl transition-transform last:mb-0 active:scale-[.98]"
                         @click="item.isOpen = !item.isOpen">
                         Section {{ idx }}: {{ item.summary }}
@@ -149,8 +151,8 @@ onMounted(() => {
                             :active="item.isOpen"
                             class="absolute top-1/2 2xl:right-[20px] 2xl:h-[40px] 2xl:w-[40px] -translate-y-1/2 right-3 h-[14px] w-[14px]" />
                     </button>
-                    <div class="py-4 px-6 2xl:text-2xl text-sm" v-if="item.isOpen && item.details">{{ item.details }}</div>
-                    <ul class="list-disc py-4 pr-6 2xl:text-2xl text-sm pl-7" v-if="item.isOpen && item.list">
+                    <div :id="item.summary" class="py-4 px-6 2xl:text-2xl text-sm" v-if="item.isOpen && item.details">{{ item.details }}</div>
+                    <ul :id="item.summary" class="list-disc py-4 pr-6 2xl:text-2xl text-sm pl-7" v-if="item.isOpen && item.list">
                         <li v-for="i in item.list" :key="i">{{ i }}</li>
                     </ul>
                 </div>

@@ -1,3 +1,48 @@
+<script setup>
+/* Call to Action */
+// import { onMounted, reactive, ref } from 'vue';
+// import AppButton from './AppButton.vue';
+import IconKaspiBank from './icons/IconKaspiBank.vue';
+// import { vMaska } from 'maska';
+
+// import { getDatabase, ref as refFirebase, set, push } from 'firebase/database';
+
+// async function writeUserData(name, email, phone) {
+//     try {
+//         const db = getDatabase();
+//         const postListRef = refFirebase(db, 'feedbackRequest');
+//         const newPostRef = push(postListRef);
+//         await set(newPostRef, {
+//             username: name,
+//             email: email,
+//             phone: phone,
+//             created: new Date().toLocaleString(),
+//         });
+//         return true
+//     } catch (error) {
+//         return new Error(error)
+//     }
+// }
+
+// const result = ref(false)
+// const maskBinded = reactive({});
+// const form = reactive({
+//     name: '',
+//     phone: '',
+//     email: '',
+// });
+
+// const onSubmitHandler = async (e) => {
+//     e.preventDefault();
+//     result.value =  await writeUserData(form.name, form.email, form.phone);
+//     for (let prop in form) {
+//         form[prop] = '';
+//     }
+// };
+
+
+</script>
+
 <template>
     <section class="bg-[#181818]">
         <div class="container 2xl:py-36 py-10" id="forms">
@@ -28,8 +73,8 @@
                         <p class="flex-grow text-center 2xl:text-[40px] text-xl font-medium">Рассрочка 0 • 0 • 12</p>
                     </div>
                 </div>
-                <form class="2xl:w-[600px] w-full bg-[#1D1D1D] flex flex-col 2xl:p-10 p-5" @submit="onSubmitHandler">
-                    <template v-if="!result">
+                <form class="2xl:w-[600px] w-full bg-[#1D1D1D] flex flex-col 2xl:p-10 p-5">
+                    <!-- <template v-if="!result">
                         <h4 class="mb-10 2xl:text-[40px] text-lg 2xl:text-left text-center font-medium">Заказать звонок от BU</h4>
                         <input
                             v-model="form.name"
@@ -45,7 +90,7 @@
                             v-maska="maskBinded"
                             data-maska="+#-(###)-###-##-##"
                             title="+7-(7XX)-XXX-XX-XX"
-                            type="text"
+                            type="phone"
                             placeholder="Номер телефона"
                             class="2xl:mb-10 mb-5 w-full rounded bg-[#2B2B2B] py-3 px-4 2xl:text-2xl text-base" />
                         <input
@@ -59,54 +104,16 @@
                             Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования
                             Платформой
                         </p>
-                    </template>
-                    <p v-else class="text-4xl text-center my-auto">Мы обязательно с Вами свяжемся в ближайшее время.</p>
+                    </template> -->
+                    <!-- <p v-else class="text-4xl text-center my-auto">Мы обязательно с Вами свяжемся в ближайшее время.</p> -->
+                     <iframe ref="formAmoCRM" width="100%" height="450" frameborder="0" src="/BU-Landing/form.html"> </iframe>
                 </form>
             </div>
         </div>
     </section>
 </template>
 
-<script setup>
-import { reactive, ref } from 'vue';
-import AppButton from './AppButton.vue';
-import IconKaspiBank from './icons/IconKaspiBank.vue';
-import { vMaska } from 'maska';
 
-import { getDatabase, ref as refFirebase, set, push } from 'firebase/database';
 
-async function writeUserData(name, email, phone) {
-    try {
-        const db = getDatabase();
-        const postListRef = refFirebase(db, 'feedbackRequest');
-        const newPostRef = push(postListRef);
-        await set(newPostRef, {
-            username: name,
-            email: email,
-            phone: phone,
-            created: new Date().toLocaleString(),
-        });
-        return true
-    } catch (error) {
-        return new Error(error)
-    }
-}
-
-const result = ref(false)
-const maskBinded = reactive({});
-const form = reactive({
-    name: '',
-    phone: '',
-    email: '',
-});
-
-const onSubmitHandler = async (e) => {
-    e.preventDefault();
-    result.value =  await writeUserData(form.name, form.email, form.phone);
-    for (let prop in form) {
-        form[prop] = '';
-    }
-};
-</script>
-
-<style lang="scss" scoped></style>
+<style  scoped>
+</style>
