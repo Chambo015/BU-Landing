@@ -73,7 +73,7 @@ import IconKaspiBank from './icons/IconKaspiBank.vue';
                         <p class="flex-grow text-center 2xl:text-[40px] text-xl font-medium">Рассрочка 0 • 0 • 12</p>
                     </div>
                 </div>
-                <form class="2xl:w-[600px] w-full bg-[#1D1D1D] flex flex-col 2xl:p-10 p-5">
+                <form class="2xl:w-[600px] w-full bg-[#1D1D1D] flex flex-col 2xl:p-10 p-5 overflow-hidden">
                     <!-- <template v-if="!result">
                         <h4 class="mb-10 2xl:text-[40px] text-lg 2xl:text-left text-center font-medium">Заказать звонок от BU</h4>
                         <input
@@ -106,7 +106,7 @@ import IconKaspiBank from './icons/IconKaspiBank.vue';
                         </p>
                     </template> -->
                     <!-- <p v-else class="text-4xl text-center my-auto">Мы обязательно с Вами свяжемся в ближайшее время.</p> -->
-                     <iframe ref="formAmoCRM" width="100%" height="450" frameborder="0" src="/BU-Landing/form.html"> </iframe>
+                     <iframe class="h-[480px]" width="100%" height="480" frameborder="0" style="overflow: hidden;" src="/BU-Landing/form.html"> </iframe>
                 </form>
             </div>
         </div>
