@@ -151,8 +151,8 @@ onMounted(() => {
                             :active="item.isOpen"
                             class="absolute top-1/2 2xl:right-[20px] 2xl:h-[40px] 2xl:w-[40px] -translate-y-1/2 right-3 h-[14px] w-[14px]" />
                     </button>
-                    <div :id="item.summary" class="py-4 px-6 2xl:text-2xl text-sm lg:text-lg" v-if="item.isOpen && item.details">{{ item.details }}</div>
-                    <ul :id="item.summary" class="list-disc py-4 pr-6 2xl:text-2xl text-sm lg:text-lg pl-7" v-if="item.isOpen && item.list">
+                    <div :id="item.summary" class="py-4 px-6 2xl:text-2xl text-sm lg:text-lg" :key="item.details" v-if="item.isOpen && item.details">{{ item.details }}</div>
+                    <ul :id="item.summary" class="list-disc py-4 pr-6 2xl:text-2xl text-sm lg:text-lg pl-7" :key="item.details" v-if="item.isOpen && item.list">
                         <li v-for="i in item.list" :key="i">{{ i }}</li>
                     </ul>
                 </div>

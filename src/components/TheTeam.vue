@@ -99,6 +99,13 @@ const  team =[
                 name: 'Нуркелсн',
                 position: 'NFT',
                 photo: './profile8.png',
+            }
+            ,
+            {
+                id: 9,
+                name: 'Диас',
+                position: 'UX/UI',
+                photo: './profile9.jpg',
             },
             {
                 id: 10,

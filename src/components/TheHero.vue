@@ -5,12 +5,13 @@ import { inView, animate } from 'motion';
 import IconLogo from './icons/IconLogo.vue';
 //import IconSaleBg from './icons/IconSaleBg.vue';
 import AppButton from '@/components/AppButton.vue';
-import blockchainImg from '../assets/4d0e5ea96b9d943023223c6a9e691e1a.png';
+import blockchainImg from '../assets/hero-min.png';
 import TheInfiniteTicker from './TheInfiniteTicker.vue';
 import TheStardust from './Stardust/TheStardust.vue';
 import TheEllipse1 from './Stardust/TheEllipse1.vue';
 import TheEllipse2 from './Stardust/TheEllipse2.vue';
 import TheEllipse3 from './Stardust/TheEllipse3.vue';
+import gsap from 'gsap'
 
 const leftCol = ref(null);
 const headerRef = ref(null);
@@ -42,7 +43,15 @@ const ourOffer = [
 ];
 
 onMounted(() => {
-    inView(leftCol.value, ({ target }) => {
+    gsap.from(leftCol.value.children, {
+    delay: 0.5,
+    duration: 1,
+    x: -100,
+    autoAlpha: 0,
+    ease: 'back.out(1.7)',
+    stagger: 0.5
+  });
+   /*  inView(leftCol.value, ({ target }) => {
         animate(
             target,
             {
@@ -51,7 +60,7 @@ onMounted(() => {
             },
             transition
         );
-    });
+    }); */
     inView(headerRef.value, ({ target }) => {
         animate(
             target,
