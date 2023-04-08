@@ -1,6 +1,9 @@
 <script setup>
 import { animate } from 'motion';
 import { onMounted, ref } from 'vue';
+import { useMediaQuery } from '@vueuse/core'
+
+const isLargeScreen = useMediaQuery('(min-width: 768px)')
 const path = ref(null);
 
 const draw = (progress) => ({
@@ -15,7 +18,9 @@ const draw = (progress) => ({
     })
 
 onMounted(() => {
-    animate(path.value, draw(1), { duration: 2.6, delay: 0.5 });
+  if(isLargeScreen.value) {
+    animate(path.value, draw(1), { duration: 2.6, delay: 0.5 })
+  }
 });
 </script>
 

@@ -139,7 +139,7 @@ onMounted(() => {
                 </div>
             </div>
             <div ref="accordionContainer" class="[&>div]:opacity-0 ">
-                <div v-auto-animate v-for="(item, idx) of accordion" :key="item.summary" class="mb-1">
+                <div v-for="(item, idx) of accordion" :key="item.summary" class="mb-1">
                     <button
                         :aria-controls="item.summary"
                         :aria-expanded="item.isOpen"
