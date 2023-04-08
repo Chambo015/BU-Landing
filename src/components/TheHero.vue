@@ -48,7 +48,7 @@ onMounted(() => {
     duration: 1,
     x: -100,
     autoAlpha: 0,
-    ease: 'back.out(1.7)',
+    ease: "power1.out",
     stagger: 0.5
   });
    /*  inView(leftCol.value, ({ target }) => {

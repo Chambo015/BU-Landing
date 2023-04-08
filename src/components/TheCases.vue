@@ -67,19 +67,19 @@ onMounted(() => {
             ref="salariesRef"
             class="md:mb-24 mb-16 flex flex-wrap justify-around gap-4 sm:gap-12 2xl:justify-between 2xl:gap-0">
             <div>
-                <div class="mb-1 text-lg font-bold leading-tight 2xl:mb-0 2xl:text-[40px] lg:text-2xl">3 000 – 3 500 $</div>
+                <div class="mb-1 text-lg font-bold leading-tight 2xl:mb-3 2xl:text-[40px] lg:text-2xl">3 000 – 3 500 $</div>
                 <p class="text-sm leading-tight text-white/50 2xl:text-[32px] lg:text-xl">Blockchain Developer</p>
             </div>
             <div>
-                <div class="mb-1 text-lg font-bold leading-tight 2xl:mb-0 2xl:text-[40px] lg:text-2xl">2 000 – 2 500 $</div>
+                <div class="mb-1 text-lg font-bold leading-tight 2xl:mb-3 2xl:text-[40px] lg:text-2xl">2 000 – 2 500 $</div>
                 <p class="text-sm leading-tight text-white/50 2xl:text-[32px] lg:text-xl">Token Audit</p>
             </div>
             <div>
-                <div class="mb-1 text-lg font-bold leading-tight 2xl:mb-0 2xl:text-[40px] lg:text-2xl">4 000 – 5 000 $</div>
+                <div class="mb-1 text-lg font-bold leading-tight 2xl:mb-3 2xl:text-[40px] lg:text-2xl">4 000 – 5 000 $</div>
                 <p class="text-sm leading-tight text-white/50 2xl:text-[32px] lg:text-xl">Metaverse Dev</p>
             </div>
             <div>
-                <div class="mb-1 text-lg font-bold leading-tight 2xl:mb-0 2xl:text-[40px] lg:text-2xl">1 500 – 2 000 $</div>
+                <div class="mb-1 text-lg font-bold leading-tight 2xl:mb-3 2xl:text-[40px] lg:text-2xl">1 500 – 2 000 $</div>
                 <p class="text-sm leading-tight text-white/50 2xl:text-[32px] lg:text-xl">NFT tokens</p>
             </div>
         </div>
