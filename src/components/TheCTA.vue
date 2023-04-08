@@ -106,7 +106,7 @@ import IconKaspiBank from './icons/IconKaspiBank.vue';
                         </p>
                     </template> -->
                     <!-- <p v-else class="text-4xl text-center my-auto">Мы обязательно с Вами свяжемся в ближайшее время.</p> -->
-                     <iframe class="h-[480px]" width="100%" height="480" frameborder="0" style="overflow: hidden;" src="/BU-Landing/form.html"> </iframe>
+                     <iframe class="h-[480px]" width="100%" height="480" frameborder="0" style="overflow: hidden;" src="/form.html"> </iframe>
                 </form>
             </div>
         </div>
