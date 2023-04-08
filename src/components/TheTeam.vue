@@ -85,20 +85,26 @@ const  team =[
             {
                 id: 6,
                 name: 'Арман',
-                position: 'Менеджер',
+                position: 'COO',
                 photo: './profile6.png',
             },
             {
                 id: 7,
                 name: 'Абиш',
-                position: 'СОО',
+                position: 'Manager',
                 photo: './profile7.png',
             },
             {
                 id: 8,
                 name: 'Нуркелсн',
-                position: 'НФТ',
+                position: 'NFT',
                 photo: './profile8.png',
+            },
+            {
+                id: 10,
+                name: 'Ералы',
+                position: 'Frontend',
+                photo: './profile10.png',
             },
         ];
 

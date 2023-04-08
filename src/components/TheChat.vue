@@ -5,7 +5,7 @@
             class="flex 2xl:h-[64px] 2xl:w-[64px] w-[40px] h-[40px] 2xl:p-0 p-[2px] cursor-pointer items-center justify-center rounded opacity-60 transition-opacity hover:opacity-100"
             v-for="app in messageApps"
             :key="app.id"
-            :style="{ backgroundColor: app.color }"
+            :style="{ background: app.color }"
             :title="app.label"
             :href="app.href"
             target="_blank">
@@ -19,6 +19,7 @@ import { onMounted, ref } from 'vue';
 // import IconConsultation from './icons/IconConsultation.vue';
 import IconTelegram from './icons/IconTelegram.vue';
 import IconWhatsapp from './icons/IconWhatsapp.vue';
+import IconInstagram  from './icons/IconInstagram.vue';
 
 import { animate, stagger } from 'motion';
 const chatsRef = ref(null);
@@ -49,6 +50,13 @@ const messageApps = [
         color: '#35A9E6',
         icon: IconTelegram,
         href: 'https://t.me/bueth'
+    },
+    {
+        id: 2,
+        label: 'Наш Instagram',
+        color: 'linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)',
+        icon: IconInstagram,
+        href: 'https://instagram.com/bu.eth?igshid=YmMyMTA2M2Y='
     },
 /*     {
         id: 2,
