@@ -3,7 +3,7 @@
         <h2 class="mb-10">Что о нас <span class="text-[#30A2FF]">студенты думают:</span></h2>
         <div ref="container" class="keen-slider">
             <div
-                class="keen-slider__slide min-w-[90%] cursor-grab active:cursor-grabbing 2xl:min-w-[640px]"
+                class="keen-slider__slide min-w-[90%] md:min-w-[330px] lg:min-w-[420px] cursor-grab active:cursor-grabbing 2xl:min-w-[640px]"
                 v-for="item in feedbacks"
                 :key="item.id">
                 <div class="flex rounded-md bg-[#141414] p-5 2xl:p-10">
@@ -13,22 +13,22 @@
                         alt="user"
                         width="56"
                         height="56"
-                        class="mr-2 aspect-square h-[30px] w-[30px] self-start 2xl:mr-5 2xl:h-[56px] 2xl:w-[56px]" />
+                        class="mr-2 aspect-square h-[30px] w-[30px] lg:h-[40px] lg:w-[40px] self-start 2xl:mr-5 2xl:h-[56px] 2xl:w-[56px]" />
                     <span
                         v-else
                         :style="{ backgroundColor: item.color }"
-                        class="mr-2 aspect-square h-[30px] w-[30px] self-start rounded-full text-center text-xs font-bold leading-[30px] 2xl:mr-5 2xl:h-[56px] 2xl:w-[56px] 2xl:text-2xl 2xl:leading-[56px]"
+                        class="mr-2 aspect-square h-[30px] w-[30px] lg:h-[40px] lg:w-[40px] lg:text-lg self-start rounded-full text-center text-xs font-bold leading-[30px] 2xl:mr-5 2xl:h-[56px] 2xl:w-[56px] lg:leading-[40px] 2xl:text-2xl 2xl:leading-[56px]"
                         v-once
                         >{{ getInitialsName(item.user) }}</span
                     >
                     <div>
                         <div
-                            class="mb-2 text-base font-medium 2xl:mb-5 2xl:text-[26px]"
+                            class="mb-2 text-base font-medium 2xl:mb-5 2xl:text-[26px] lg:text-lg"
                             :style="{ color: item.color }"
                             v-once>
                             {{ item.user }}
                         </div>
-                        <p class="text-sm 2xl:text-2xl" v-once>{{ item.text }}</p>
+                        <p class="text-sm 2xl:text-2xl lg:text-base" v-once>{{ item.text }}</p>
                     </div>
                 </div>
             </div>

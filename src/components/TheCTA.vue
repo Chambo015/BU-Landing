@@ -46,31 +46,31 @@ import IconKaspiBank from './icons/IconKaspiBank.vue';
 <template>
     <section class="bg-[#181818]">
         <div class="container 2xl:py-36 py-10" id="forms">
-            <h2 class="2xl:mb-20 mb-5"><span class="text-[#30A2FF]">Записаться</span> на курс</h2>
-            <div class="flex 2xl:flex-row flex-col justify-center gap-10">
-                <div class="2xl:w-[600px] w-full overflow-hidden rounded-md bg-[#1D1D1D]">
+            <h2 class="2xl:mb-20 mb-5 lg:mb-12"><span class="text-[#30A2FF]">Записаться</span> на курс</h2>
+            <div class="flex lg:flex-row flex-col justify-center gap-10">
+                <div class="2xl:w-[600px] w-full flex flex-col overflow-hidden rounded-md bg-[#1D1D1D]">
                     <div class="2xl:p-10 p-5">
-                        <h4 class="2xl:mb-10 mb-4 2xl:text-[40px] text-lg font-medium">Стоимость курса</h4>
-                        <ul class="2xl:mb-10 mb-4 text-right text-sm 2xl:text-xl">
+                        <h4 class="2xl:mb-10 mb-4 2xl:text-[40px] text-lg font-medium lg:text-2xl">Стоимость курса</h4>
+                        <ul class="2xl:mb-10 mb-4 text-right text-sm 2xl:text-xl lg:text-lg">
                             <li>Старт курса: 13 марта</li>
                             <li>Осталось: 3 места</li>
                         </ul>
-                        <ul class="mb-5 list-inside list-disc 2xl:space-y-6 space-y-3 2xl:text-2xl text-sm">
+                        <ul class="mb-5 list-inside list-disc 2xl:space-y-6 space-y-3 2xl:text-2xl text-sm lg:text-lg">
                             <li>Курс в подарок</li>
                             <li>Длительность рассрочки — 12 месяцев</li>
                             <li>Помощь с трудоустройством</li>
                             <li>Инсайдерские информаций</li>
                         </ul>
-                        <div class="flex justify-center gap-8 2xl:text-[40px] text-xl">
+                        <div class="flex justify-center gap-8 2xl:text-[40px] text-xl lg:text-3xl">
                             <p class="font-bold">52 990 <span class="font-normal">₸/мес</span></p>
                             <p class="font-normal text-white/30">
                                 <span class="font-bold line-through decoration-[#606060]">73 380 </span>₸/мес
                             </p>
                         </div>
                     </div>
-                    <div class="flex 2xl:h-[88px] h-[40px] items-center bg-[#F14635] px-3">
-                        <IconKaspiBank class="2xl:w-[66px] w-[35px]" />
-                        <p class="flex-grow text-center 2xl:text-[40px] text-xl font-medium">Рассрочка 0 • 0 • 12</p>
+                    <div class="flex mt-auto lg:h-[88px] h-[40px]  items-center bg-[#F14635] px-3">
+                        <IconKaspiBank class="lg:w-[66px] w-[35px]" />
+                        <p class="flex-grow text-center 2xl:text-[40px] lg:text-3xl text-xl font-medium">Рассрочка 0 • 0 • 12</p>
                     </div>
                 </div>
                 <form class="2xl:w-[600px] w-full bg-[#1D1D1D] flex flex-col 2xl:p-10 p-5 overflow-hidden">

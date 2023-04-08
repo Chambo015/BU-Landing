@@ -121,12 +121,12 @@ onMounted(() => {
 
 <template>
     <div class="w-screen bg-[#181818]">
-        <section class="container flex 2xl:flex-row flex-col 2xl:gap-[60px] gap-9 2xl:py-[180px] py-12" id="education">
+        <section class="container flex lg:flex-row flex-col 2xl:gap-[60px] gap-9 2xl:py-[180px] py-12" id="education">
             <div>
-                <h2 class="lg:mb-8 mb-4"><span class="text-[#30A2FF]">Программа обучения —</span><br class="sm:hidden" /> 9 месяцев</h2>
+                <h2 class="lg:mb-8 mb-4"><span class="text-[#30A2FF]">Программа обучения —</span><br class="2xl:hidden" /> 9 месяцев</h2>
                 <div ref="leftColRef">
-                    <p class="2xl:mb-[60px] mb-6 2xl:text-[40px] text-base leading-tight font-medium">220 часов теории и 250 часов практики</p>
-                    <div class="2xl:space-y-6 2xl:text-2xl text-sm space-y-4 leading-tight">
+                    <p class="2xl:mb-[60px] mb-6 2xl:text-[40px] text-base sm:text-lg md:text-2xl lg:text-3xl leading-tight font-medium">220 часов теории и 250 часов практики</p>
+                    <div class="2xl:space-y-6 2xl:text-2xl text-sm space-y-4 leading-tight lg:text-xl">
                         <p>
                             Вебинары, на которых вы можете задать вопросы, проводятся по будням 3 раза в неделю после 16:00
                             по времени Астаны. Для комфортных тренировок вам понадобится 6-8 часов в неделю.
@@ -138,12 +138,12 @@ onMounted(() => {
                     </div>
                 </div>
             </div>
-            <div ref="accordionContainer" class="[&>div]:opacity-0">
+            <div ref="accordionContainer" class="[&>div]:opacity-0 ">
                 <div v-auto-animate v-for="(item, idx) of accordion" :key="item.summary" class="mb-1">
                     <button
                         :aria-controls="item.summary"
                         :aria-expanded="item.isOpen"
-                        class="relative block 2xl:w-[700px] w-full whitespace-nowrap bg-[#1D1D1D] lg:py-4 py-2 2xl:px-6 px-3 text-left text-sm 2xl:text-3xl transition-transform last:mb-0 active:scale-[.98]"
+                        class="relative block 2xl:w-[700px] w-full lg:w-[430px] lg:text-xl whitespace-nowrap bg-[#1D1D1D] lg:py-4 py-2 2xl:px-6 px-3 text-left text-sm 2xl:text-3xl transition-transform last:mb-0 active:scale-[.98]"
                         @click="item.isOpen = !item.isOpen">
                         Section {{ idx }}: {{ item.summary }}
                         <IconArrowDown
@@ -151,8 +151,8 @@ onMounted(() => {
                             :active="item.isOpen"
                             class="absolute top-1/2 2xl:right-[20px] 2xl:h-[40px] 2xl:w-[40px] -translate-y-1/2 right-3 h-[14px] w-[14px]" />
                     </button>
-                    <div :id="item.summary" class="py-4 px-6 2xl:text-2xl text-sm" v-if="item.isOpen && item.details">{{ item.details }}</div>
-                    <ul :id="item.summary" class="list-disc py-4 pr-6 2xl:text-2xl text-sm pl-7" v-if="item.isOpen && item.list">
+                    <div :id="item.summary" class="py-4 px-6 2xl:text-2xl text-sm lg:text-lg" v-if="item.isOpen && item.details">{{ item.details }}</div>
+                    <ul :id="item.summary" class="list-disc py-4 pr-6 2xl:text-2xl text-sm lg:text-lg pl-7" v-if="item.isOpen && item.list">
                         <li v-for="i in item.list" :key="i">{{ i }}</li>
                     </ul>
                 </div>

@@ -5,7 +5,7 @@
             background-eclipse="linear-gradient(180deg, #2C4982 0%, #2CD095 100%)"
             background-rectangle="linear-gradient(180deg, rgba(24, 255, 158, 0) 0%, #17FFE3 100%)" />
         <h2 class="mb-8 2xl:mb-24">Наш <span class="text-[#30A2FF]">Lead</span> преподаватель:</h2>
-        <div class="mb-7 flex flex-col gap-6 lg:flex-row 2xl:mb-32 2xl:gap-16">
+        <div class="mb-7 lg:mb-14 flex flex-col gap-6 md:gap-12 lg:gap-16 md:flex-row 2xl:mb-32 2xl:gap-16">
             <img
             ref="imgRef"
                 src="/img.png"
@@ -13,12 +13,12 @@
                 loading="lazy"
                 width="466"
                 height="466"
-                class="aspect-square w-[85%] shadow-2xl shadow-black/50 2xl:w-auto" />
+                class="aspect-square w-[85%] shadow-2xl self-start shadow-black/50 md:w-[320px] lg:w-auto" />
             <div ref="aboutLeadRef">
-                <h4 class="mb-4 text-2xl font-medium 2xl:mb-12 2xl:text-5xl">Кирилл Зайнутдинов</h4>
+                <h4 class="mb-4 text-2xl font-medium 2xl:mb-12 2xl:text-5xl lg:text-3xl">Кирилл Зайнутдинов</h4>
                 <ul
                     role="list"
-                    class="list-disc space-y-4 font-['TT_Octosquares'] text-sm 2xl:space-y-8 2xl:text-3xl [&>li]:pl-[1ch]">
+                    class="list-disc space-y-4 font-['TT_Octosquares'] text-sm sm:text-base md:text-lg lg:text-2xl 2xl:space-y-8 2xl:text-3xl [&>li]:pl-[1ch]">
                     <li>Международный Senior Blockchain разработчик</li>
                     <li>МИФИ Кибернетики и Киберзащиты</li>
                     <li>Предствитель Crypton Studio</li>
@@ -27,7 +27,7 @@
                 </ul>
             </div>
         </div>
-        <blockquote ref="blockquoteRef" class="text-right text-sm 2xl:text-4xl">
+        <blockquote ref="blockquoteRef" class="text-right text-sm md:text-lg lg:text-2xl 2xl:text-4xl">
             <q class="mb-4 block italic lg:mb-8">Самый лучший способ научится программировать - это программировать</q>
             <cite class="text-white/50">Кирилл Зайнутдинов</cite>
         </blockquote>

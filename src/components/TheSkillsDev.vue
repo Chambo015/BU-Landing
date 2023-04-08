@@ -4,18 +4,18 @@
            <a href="#hero"> <span class="text-[#30A2FF]">На что способен</span> Blockchain Dev?</a>
         </h2>
 
-        <div ref="skillsRef" class="flex justify-around flex-wrap gap-5  2xl:[&>div]:max-w-[420px] ">
-            <div class="flex flex-col gap-3 sm:gap-0 items-center group hover:shadow-[0px_0px_65px_-6px_rgba(172,108,255,0.7)] 2xl:py-7 2xl:px-5 py-3 px-5 transition-shadow rounded-md duration-500">
-                <IconSmartContract class="fill-white 2xl:w-32 2xl:h-32 w-14 h-14 group-hover:fill-[#AC6CFF] transition-colors" />
-                <p class="text-center 2xl:text-4xl text-base leading-none">Пишет и запускает смарт-контракты (программы) в сеть блокчейна</p>
+        <div ref="skillsRef" class="flex justify-around flex-col md:flex-row gap-5  2xl:[&>div]:max-w-[420px] ">
+            <div class="flex flex-col gap-3  items-center group hover:shadow-[0px_0px_65px_-6px_rgba(172,108,255,0.7)] 2xl:py-7 2xl:px-5 py-3 px-5 transition-shadow rounded-md duration-500">
+                <IconSmartContract class="fill-white 2xl:w-32 2xl:h-32 w-14 h-14 lg:w-20 lg:h-20 group-hover:fill-[#AC6CFF] transition-colors" />
+                <p class="text-center 2xl:text-4xl text-base xl:text-lg leading-none">Пишет и запускает смарт-контракты (программы) в сеть блокчейна</p>
             </div>
-            <div class="flex flex-col gap-3 sm:gap-0 items-center group hover:shadow-[0px_0px_65px_-6px_rgba(48,162,255,0.7)] 2xl:py-7 2xl:px-5 py-3 px-5  transition-shadow rounded-md duration-500">
-                <IconWeb3 class="fill-white 2xl:w-32 2xl:h-32 w-14 h-14 group-hover:fill-[#30A2FF] transition-colors" />
-                <p class="text-center 2xl:text-4xl text-base leading-none">Работает над инновационными Web3.0 платформами и проектами</p>
+            <div class="flex flex-col gap-3  items-center group hover:shadow-[0px_0px_65px_-6px_rgba(48,162,255,0.7)] 2xl:py-7 2xl:px-5 py-3 px-5  transition-shadow rounded-md duration-500">
+                <IconWeb3 class="fill-white 2xl:w-32 2xl:h-32 w-14 h-14 group-hover:fill-[#30A2FF] transition-colors lg:w-20 lg:h-20" />
+                <p class="text-center 2xl:text-4xl text-base leading-none xl:text-lg">Работает над инновационными Web3.0 платформами и проектами</p>
             </div>
-            <div class="flex flex-col gap-3 sm:gap-0 items-center group hover:shadow-[0px_0px_65px_-6px_rgba(115,255,120,0.7)] 2xl:py-7 2xl:px-5 py-3 px-5  transition-shadow rounded-md duration-500">
-                <IconNotebook class="fill-white 2xl:w-32 2xl:h-32 w-14 h-14 group-hover:fill-[#73FF78] transition-colors" />
-                <p class="text-center 2xl:text-4xl text-base leading-none">Может релоцироваться, или работать удаленно в любом уголке мира</p>
+            <div class="flex flex-col gap-3  items-center group hover:shadow-[0px_0px_65px_-6px_rgba(115,255,120,0.7)] 2xl:py-7 2xl:px-5 py-3 px-5  transition-shadow rounded-md duration-500">
+                <IconNotebook class="fill-white 2xl:w-32 2xl:h-32 w-14 h-14 group-hover:fill-[#73FF78] transition-colors lg:w-20 lg:h-20" />
+                <p class="text-center 2xl:text-4xl text-base leading-none xl:text-lg">Может релоцироваться, или работать удаленно в любом уголке мира</p>
             </div>
         </div>
     </section>

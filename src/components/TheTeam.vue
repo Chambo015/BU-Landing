@@ -7,15 +7,15 @@
         <h2 class="relative z-50 mb-8 2xl:mb-[60px]">Состав нашей <span class="text-[#30A2FF]">команды</span></h2>
         <div ref="container" class="keen-slider opacity-0" >
             <div
-                class="keen-slider__slide min-w-[150px] cursor-grab rounded-md active:cursor-grabbing 2xl:min-w-[320px]"
+                class="keen-slider__slide min-w-[150px] md:min-w-[170px] lg:min-w-[200px] cursor-grab rounded-md active:cursor-grabbing 2xl:min-w-[320px]"
                 v-for="person in team"
                 :key="person.id">
                 <div class="flex flex-col items-center space-y-2 bg-[#141414] py-4 px-7 2xl:space-y-5 2xl:py-10">
                     <div
-                        class="h-[80px] w-[80px] rounded-full 2xl:h-[200px] 2xl:w-[200px]"
+                        class="h-[80px] w-[80px] md:h-[100px] md:w-[100px] lg:h-[130px] lg:w-[130px] rounded-full 2xl:h-[200px] 2xl:w-[200px]"
                         :style="{ background: `url('${person.photo}') center / cover` }"></div>
-                    <div class="whitespace-nowrap text-base 2xl:text-[32px]">{{ person.name }}</div>
-                    <p class="whitespace-nowrap text-lg font-medium 2xl:text-[36px]">{{ person.position }}</p>
+                    <div class="whitespace-nowrap text-base 2xl:text-[32px] lg:text-xl md:text-lg">{{ person.name }}</div>
+                    <p class="whitespace-nowrap text-lg font-medium 2xl:text-[36px] lg:text-2xl md:text-xl">{{ person.position }}</p>
                 </div>
             </div>
         </div>
