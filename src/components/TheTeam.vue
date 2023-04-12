@@ -66,7 +66,7 @@ const  team =[
             },
             {
                 id: 3,
-                name: 'Адильхан',
+                name: 'Адилхан',
                 position: 'Product Manger',
                 photo: './profile3.png',
             },

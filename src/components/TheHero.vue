@@ -115,7 +115,7 @@ onMounted(() => {
     <div class="bg-[#181818]" v-cloak>
         <header
             ref="headerRef"
-            class="container relative z-10 mb-16 flex items-center pt-4 opacity-0 duration-1000 2xl:mb-24 2xl:pt-[60px]">
+            class="container relative z-10 mb-16 flex items-center pt-4 opacity-0 duration-1000 2xl:mb-24 2xl:pt-[30px]">
             <IconLogo class="w-16 sm:w-20 md:w-[124px] 2xl:w-[150px]" />
             <a href="#forms"
                 class="ml-auto mr-3 cursor-pointer rounded border px-2 py-2 text-sm !leading-none sm:mr-8 sm:py-3 sm:px-4 sm:text-[18px] md:mr-11 lg:text-2xl 2xl:px-7 2xl:py-3 2xl:text-[24px]">
