@@ -1,47 +1,42 @@
 <template>
-    <section class="bg-[#F4E4B6] text-black text-lg 2xl:text-4xl flex w-screen overflow-hidden">
-        <div class="whitespace-nowrap inner-line bg-[#F4E4B6] relative py-1">
-            {{ text }}<span class="ml-12 mr-9">{{ text }}</span>
-            {{ text }}<span class="ml-12 mr-9">{{ text }}</span>
-            {{ text }}<span class="ml-12 mr-9">{{ text }}</span>
-            {{ text }}<span class="ml-12 mr-9">{{ text }}</span>
-            {{ text }}<span class="ml-12 mr-9">{{ text }}</span>
-            {{ text }}<span class="ml-12 mr-9">{{ text }}</span>
+    <section class="bg-[#F4E4B6] font-['TT_Octosquares'] text-black text-lg 2xl:text-3xl flex w-screen overflow-hidden">
+        <div class="whitespace-nowrap inner-line bg-[#F4E4B6] relative py-1 xl:py-2">
+            {{ text }}{{ text }}{{ text }}{{ text }}{{ text }}
         </div>
-        <div  class="whitespace-nowrap inner-line bg-[#F4E4B6] relative py-1">
-            {{ text }}<span class="ml-12 mr-9">{{ text }}</span>
-            {{ text }}<span class="ml-12 mr-9">{{ text }}</span>
-            {{ text }}<span class="ml-12 mr-9">{{ text }}</span>
-            {{ text }}<span class="ml-12 mr-9">{{ text }}</span>
-            {{ text }}<span class="ml-12 mr-9">{{ text }}</span>
-            {{ text }}<span class="ml-12 mr-9">{{ text }}</span>
+        <div  class="whitespace-nowrap inner-line bg-[#F4E4B6] relative py-1 xl:py-2">
+            {{ text }}{{ text }}{{ text }}{{ text }}{{ text }}
         </div>
     </section>
 </template>
 
 <script setup>
-defineProps({
+import {computed} from 'vue';
+
+const props = defineProps({
     text: {
         type: String,
         default: 'Spring Sale'
     }
 })
+
+const speed = computed(() =>  props.text.length * 4 )
 </script>
 
 <style scoped>
-span {
-    -webkit-text-stroke: 1px;
-    -webkit-text-fill-color: transparent;
-}
 
 div.inner-line {
     transform: translateX(100%);
-    animation: animate 40s -40s linear infinite;
+    animation: animate linear infinite;
+    animation-duration: v-bind(speed + 's');
+    animation-delay: v-bind(speed * -1 + 's');
     will-change: transform;
+    vertical-align: middle;
 }
 
 div.inner-line:nth-child(2) {
-      animation: animate2 40s -20s linear infinite;
+      animation: animate2 linear infinite;
+      animation-duration: v-bind(speed + 's');
+    animation-delay: v-bind(speed / 2 * -1 + 's');
     }
 
 @keyframes animate {

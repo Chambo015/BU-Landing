@@ -8,6 +8,9 @@
                 }">
                 <IconLogo class="2xl:w-[200px] w-24 md:w-32" />
             </div>
+            <div class="font-['TT_Octosquares']">
+
+            </div>
     </footer>
 </template>
 
