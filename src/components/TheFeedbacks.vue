@@ -48,7 +48,7 @@
 import { useKeenSlider } from 'keen-slider/vue'; // import from 'keen-slider/vue.es' to get an ES module
 import { generateRandomLightColor } from '@/utils/randomColor';
 import IconArrowRight from './icons/IconArrowRight.vue';
-import { computed, onMounted, ref, watchEffect } from 'vue';
+import { computed, inject, onMounted, ref, watchEffect } from 'vue';
 import { useMediaQuery } from '@vueuse/core';
 import { animate, inView } from 'motion';
 
@@ -124,7 +124,8 @@ const [container, slider] = useKeenSlider({
     },
 });
 
-onMounted(() => {
+const isLargerSm = inject('isLargerSm')
+const launchAnimations = () => {
     inView(container.value, ({ target }) => {
         animate(
             target,
@@ -135,7 +136,9 @@ onMounted(() => {
             { duration: 1.2, delay: 0.5 }
         );
     });
-
+}
+onMounted(() => {
+    isLargerSm.value && launchAnimations();
     watchEffect(() => {
         disableNext.value = slider.value.track.details.maxIdx === current.value;
     });

@@ -1,11 +1,10 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { inject, onMounted, ref } from 'vue';
 import { inView, animate } from 'motion';
 
 import IconLogo from './icons/IconLogo.vue';
 //import IconSaleBg from './icons/IconSaleBg.vue';
 import AppButton from '@/components/AppButton.vue';
-import blockchainImg from '../assets/hero-min.png';
 import TheInfiniteTicker from './TheInfiniteTicker.vue';
 import TheStardust from './Stardust/TheStardust.vue';
 import TheEllipse1 from './Stardust/TheEllipse1.vue';
@@ -42,7 +41,8 @@ const ourOffer = [
     },
 ];
 
-onMounted(() => {
+const isLargerSm = inject('isLargerSm')
+const launchAnimations = () => {
     gsap.from(leftCol.value.children, {
     delay: 0.5,
     duration: 1,
@@ -51,16 +51,6 @@ onMounted(() => {
     ease: "power1.out",
     stagger: 0.5
   });
-   /*  inView(leftCol.value, ({ target }) => {
-        animate(
-            target,
-            {
-                transform: ['translateX(-100px)', 'none'],
-                opacity: [0, 1],
-            },
-            transition
-        );
-    }); */
     inView(headerRef.value, ({ target }) => {
         animate(
             target,
@@ -108,6 +98,10 @@ onMounted(() => {
             { duration: 3, delay: 0.5 }
         );
     });
+}
+
+onMounted(() => {
+    isLargerSm.value && launchAnimations()
 });
 </script>
 
@@ -166,13 +160,16 @@ onMounted(() => {
                     background-rectangle="linear-gradient(180deg, rgba(24, 75, 255, 0) 0%, #174AFF 100%)" />
                 <TheEllipse2 class="absolute left-1/2 h-[80%] -translate-x-1/2 sm:h-full" />
                 <TheEllipse3 class="absolute left-1/2 top-[5%] h-[70%] -translate-x-1/2 sm:h-[90%]" />
-                <img
-                    ref="imgRef"
-                    :src="blockchainImg"
-                    alt="super img"
-                    width="700"
-                    height="700"
-                    class="z-40 mx-auto -rotate-12 2xl:h-[700px] 2xl:w-[700px]" />
+                <picture>
+                    <source srcset="/hero.webp" type="image/webp">
+                    <img
+                        ref="imgRef"
+                        src="/hero-min.png"
+                        alt="super img"
+                        width="700"
+                        height="700"
+                        class="z-40 mx-auto -rotate-12 2xl:h-[700px] 2xl:w-[700px]" />
+                </picture>
             </div>
         </section>
     </div>

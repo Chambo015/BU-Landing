@@ -33,12 +33,13 @@
 import IconLogo from './icons/IconLogo.vue';
 import IconAstanaHub from './icons/IconAstanaHub.vue';
 import TheStardust from './Stardust/TheStardust.vue';
-import { onMounted, ref } from 'vue';
+import { inject, onMounted, ref } from 'vue';
 import { animate, inView } from 'motion';
 
-const certificateRef = ref()
+const certificateRef = ref();
 
-onMounted(() => {
+const isLargerSm = inject('isLargerSm');
+const launchAnimations = () => {
     inView(certificateRef.value, ({ target }) => {
         animate(
             target,
@@ -51,6 +52,10 @@ onMounted(() => {
             }
         );
     }, { margin: "-200px 0px"});
+}
+
+onMounted(() => {
+    isLargerSm.value && launchAnimations()
 });
 </script>
 

@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { inject, onMounted, ref } from 'vue';
 import IconArrowDown from './icons/IconArrowDown.vue';
 import {animate, inView, stagger} from 'motion';
 
@@ -90,7 +90,8 @@ const accordion = ref([
 const accordionContainer = ref(null)
 const leftColRef = ref(null) 
 
-onMounted(() => {
+const isLargerSm = inject('isLargerSm');
+const launchAnimations = () => {
     inView(
         accordionContainer.value,
         ({ target }) => {
@@ -116,6 +117,9 @@ onMounted(() => {
             {duration: 1, delay: 0.5}
         );
     });
+}
+onMounted(() => {
+    isLargerSm.value && launchAnimations()
 })
 </script>
 

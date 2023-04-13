@@ -1,14 +1,14 @@
 <script setup>
 import { animate, inView, stagger } from 'motion';
-import solidityImg from '../assets/solidity.png';
 import TheStardust from './Stardust/TheStardust.vue';
-import { onMounted, ref } from 'vue';
+import { inject, onMounted, ref } from 'vue';
 
 const salariesRef = ref(null);
 const subTitleRef = ref(null);
 const aboutSolidityRef = ref(null);
 
-onMounted(() => {
+const isLargerSm = inject('isLargerSm');
+const launchAnimations = () => {
     inView(
         salariesRef.value,
         ({ target }) => {
@@ -50,6 +50,10 @@ onMounted(() => {
         },
         { margin: '100px 0px' }
     );
+}
+
+onMounted(() => {
+    isLargerSm.value && launchAnimations()
 });
 </script>
 
@@ -97,12 +101,15 @@ onMounted(() => {
                     <li>Самый востребованный язык блокчейн разработки</li>
                 </ul>
                 <div class="relative h-[150px] lg:h-[200px] 2xl:h-full flex justify-center lg:justify-end 2xl:items-center 2xl:flex-grow">
-                    <img
-                        :src="solidityImg"
-                        alt="solidity"
-                        width="500"
-                        height="500"
-                        class="translate-y-[10%] aspect-square h-[120%] 2xl:h-auto object-cover w-auto lg:translate-y-[5%]  2xl:w-[90%] 2xl:-translate-y-[10%]" />
+                    <picture>
+                        <source srcset="/solidity.webp" type="image/webp" >
+                        <img
+                            src="/solidity.png"
+                            alt="solidity"
+                            width="500"
+                            height="500"
+                            class="translate-y-[10%] aspect-square h-[120%] 2xl:h-auto object-cover w-auto lg:translate-y-[5%]  2xl:w-[90%] 2xl:-translate-y-[10%]" />
+                    </picture>
                 </div>
             </div>
         </div>

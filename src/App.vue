@@ -1,5 +1,5 @@
 <script setup>
-import {onMounted} from 'vue';
+import {onMounted, provide} from 'vue';
 import TheCTA from './components/TheCTA.vue';
 import TheCases from './components/TheCases.vue';
 import TheCertificates from './components/TheCertificates.vue';
@@ -15,9 +15,11 @@ import TheSkillsDev from './components/TheSkillsDev.vue';
 import TheTeam from './components/TheTeam.vue';
 // import TheWorkShops from './components/TheWorkShops.vue';
 import {animate, inView} from 'motion';
+import {useMediaQuery} from '@vueuse/core';
 
-onMounted(() => {
-    inView('h2', ({ target }) => {
+const isLargerSm = useMediaQuery('(min-width: 640px)');
+const launchAnimations = () => {
+  inView('h2', ({ target }) => {
         animate(
             target,
             {
@@ -27,7 +29,13 @@ onMounted(() => {
             { delay: 0.2, duration: 0.9, easing: [0.17, 0.55, 0.55, 1] }
         );
     }, { margin: "-0px 0px -0px 0px"});
-  })
+}
+
+onMounted(() => {
+  isLargerSm.value && launchAnimations()
+})
+
+provide('isLargerSm', isLargerSm)
 </script>
 
 <template>
