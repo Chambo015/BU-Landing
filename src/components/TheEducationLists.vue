@@ -142,7 +142,7 @@ onMounted(() => {
                     </div>
                 </div>
             </div>
-            <div ref="accordionContainer" class="[&>div]:opacity-0 ">
+            <div ref="accordionContainer">
                 <div v-for="(item, idx) of accordion" :key="item.summary" class="mb-1">
                     <button
                         :aria-controls="item.summary"

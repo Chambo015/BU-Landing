@@ -30,10 +30,10 @@ onMounted(() => {
         <IconStarOctagram class="w-[80px] absolute top-[33%] -right-[100px]" />
         <h2 class="mb-20">Не пропусти <span class="text-[#30A2FF]">бесплатные воркшопы</span> по web3</h2>
         <div ref="wrapper" class="space-y-[80px]">
-            <div class="h-[300px] w-full bg-[#4AAEFF] rounded-xl relative workshop  -translate-x-24 opacity-0">
+            <div class="h-[300px] w-full bg-[#4AAEFF] rounded-xl relative workshop  -translate-x-24 ">
                 <img src="/etherium.png" alt="etherium" width="300" height="300" class="absolute left-5 -top-[60px]">
             </div>
-            <div class="h-[300px] w-full bg-[#4AAEFF]  rounded-xl relative workshop -translate-x-24 opacity-0">
+            <div class="h-[300px] w-full bg-[#4AAEFF]  rounded-xl relative workshop -translate-x-24">
                 <img src="/bag.png" alt="bag" width="300" height="300" class="absolute left-5 -bottom-[60px]">
             </div>
         </div>

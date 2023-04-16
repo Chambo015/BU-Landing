@@ -109,7 +109,7 @@ onMounted(() => {
     <div class="bg-[#181818]" v-cloak>
         <header
             ref="headerRef"
-            class="container relative z-10 mb-16 flex items-center pt-4 opacity-0 duration-1000 2xl:mb-24 2xl:pt-[50px]">
+            class="container relative z-10 mb-16 flex items-center pt-4 duration-1000 2xl:mb-24 2xl:pt-[50px]">
             <IconLogo class="w-16 sm:w-20 md:w-[124px] 2xl:w-[150px]" />
             <a href="#forms"
                 class="ml-auto mr-3 cursor-pointer rounded border px-2 py-2 text-sm !leading-none sm:mr-8 sm:py-3 sm:px-4 sm:text-[18px] md:mr-11 lg:text-2xl 2xl:px-7 2xl:py-3 2xl:text-[24px]">
@@ -178,7 +178,7 @@ onMounted(() => {
         <ul
             ref="offersRef"
             class="flex list-disc flex-wrap justify-around gap-4 pl-4 text-lg font-medium 2xl:ml-10 2xl:text-5xl lg:text-3xl [&>li]:duration-500">
-            <li v-for="offer in ourOffer" :key="offer.title" class="opacity-0">
+            <li v-for="offer in ourOffer" :key="offer.title">
                 {{ offer.title }}
                 <p class="whitespace-nowrap text-xs font-normal 2xl:text-3xl lg:text-base">{{ offer.subTitle }}</p>
             </li>

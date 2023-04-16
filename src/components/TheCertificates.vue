@@ -22,7 +22,7 @@
             </div>
         </div>
         <div ref="certificateRef"
-            class="opacity-0 relative z-10 mx-auto mb-[5%] w-[90%] lg:w-full self-end bg-[url('/certificatesBg.png')] bg-[length:100%_auto] mix-blend-lighten before:block before:pt-[calc(100%/1.267)] 2xl:mx-0 2xl:w-[771px]">
+            class="relative z-10 mx-auto mb-[5%] w-[90%] lg:w-full self-end bg-[url('/certificatesBg.png')] bg-[length:100%_auto] mix-blend-lighten before:block before:pt-[calc(100%/1.267)] 2xl:mx-0 2xl:w-[771px]">
             <div
                 class="absolute left-1/2 top-1/2 h-[100%] w-[70%] -translate-x-1/2 -translate-y-1/2 bg-[url('/certificatesIn.png')] bg-contain bg-[50%_63%] bg-no-repeat"></div>
         </div>

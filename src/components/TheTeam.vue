@@ -5,7 +5,7 @@
             background-eclipse="linear-gradient(180deg, rgba(0, 194, 255, 0) 0%, #FF29C3 100%)"
             background-rectangle="linear-gradient(180deg, rgba(24, 75, 255, 0) 0%, #174AFF 100%)" />
         <h2 class="relative z-50 mb-8 2xl:mb-[60px]">Состав нашей <span class="text-[#30A2FF]">команды</span></h2>
-        <div ref="container" class="keen-slider opacity-0" >
+        <div ref="container" class="keen-slider" >
             <div
                 class="keen-slider__slide min-w-[150px] md:min-w-[170px] lg:min-w-[200px] cursor-grab rounded-md active:cursor-grabbing 2xl:min-w-[320px]"
                 v-for="person in team"
