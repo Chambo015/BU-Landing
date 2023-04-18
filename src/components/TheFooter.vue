@@ -7,7 +7,7 @@
                 </div>
                 <div class="flex flex-col lg:flex-row [&>div]:flex-[0_0_50%]  gap-5">
                     <div class="flex gap-2 lg:justify-around">
-                        <span>Оферта</span>
+                        <span><a href="/OFFER.pdf" target="_blank">Оферта</a></span>
                         <span><a href="/privacy_policy.pdf" target="_blank">Политика конфедициальности</a></span>
                     </div>
                     <p>Мы используем файлы cookies,  для персонализации сервисов и повышения удобства 

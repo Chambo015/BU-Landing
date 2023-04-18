@@ -168,7 +168,7 @@ onMounted(() => {
                         alt="super img"
                         width="700"
                         height="700"
-                        class="z-40 mx-auto -rotate-12 2xl:h-[700px] 2xl:w-[700px]" />
+                        class="z-40 mx-auto max-sm:-translate-y-[10%] -rotate-12 2xl:h-[700px] 2xl:w-[700px]" />
                 </picture>
             </div>
         </section>
