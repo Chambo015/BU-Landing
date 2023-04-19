@@ -107,12 +107,12 @@ const  team =[
                 position: 'UX/UI',
                 photo: './profile9.jpg',
             },
-            {
+/*             {
                 id: 10,
                 name: 'Ералы',
                 position: 'Frontend',
                 photo: './profile10.png',
-            },
+            }, */
         ];
 
 const is2xl = useMediaQuery('(min-width: 1536px)');

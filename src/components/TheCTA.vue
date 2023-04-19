@@ -1,44 +1,48 @@
 <script setup>
 /* Call to Action */
-// import { onMounted, reactive, ref } from 'vue';
-// import AppButton from './AppButton.vue';
+import {  reactive, ref } from 'vue';
+import AppButton from './AppButton.vue';
 import IconKaspiBank from './icons/IconKaspiBank.vue';
-// import { vMaska } from 'maska';
+import { vMaska } from 'maska';
 
-// import { getDatabase, ref as refFirebase, set, push } from 'firebase/database';
+import { getDatabase, ref as refFirebase, set, push } from 'firebase/database';
 
-// async function writeUserData(name, email, phone) {
-//     try {
-//         const db = getDatabase();
-//         const postListRef = refFirebase(db, 'feedbackRequest');
-//         const newPostRef = push(postListRef);
-//         await set(newPostRef, {
-//             username: name,
-//             email: email,
-//             phone: phone,
-//             created: new Date().toLocaleString(),
-//         });
-//         return true
-//     } catch (error) {
-//         return new Error(error)
-//     }
-// }
+async function writeUserData(name, email, phone) {
+    try {
+        const db = getDatabase();
+        const postListRef = refFirebase(db, 'feedbackRequest');
+        const newPostRef = push(postListRef);
+        await set(newPostRef, {
+            username: name,
+            email: email,
+            phone: phone,
+            created: new Date().toLocaleString(),
+        });
+        return true
+    } catch (error) {
+        return new Error(error)
+    }
+}
 
-// const result = ref(false)
-// const maskBinded = reactive({});
-// const form = reactive({
-//     name: '',
-//     phone: '',
-//     email: '',
-// });
+const result = ref(false)
+const maskBinded = reactive({});
+const form = reactive({
+    name: '',
+    phone: '',
+    email: '',
+});
 
-// const onSubmitHandler = async (e) => {
-//     e.preventDefault();
-//     result.value =  await writeUserData(form.name, form.email, form.phone);
-//     for (let prop in form) {
-//         form[prop] = '';
-//     }
-// };
+const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    result.value =  await writeUserData(form.name, form.email, form.phone);
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push ({'event': 'formSuccessMain'});
+    
+    for (let prop in form) {
+        form[prop] = '';
+    }
+};
 
 
 </script>
@@ -73,8 +77,8 @@ import IconKaspiBank from './icons/IconKaspiBank.vue';
                         <p class="flex-grow text-center 2xl:text-[40px] lg:text-3xl text-xl font-medium">Рассрочка 0 • 0 • 12</p>
                     </div>
                 </div>
-                <form class="2xl:w-[600px] w-full bg-[#1D1D1D] flex flex-col 2xl:p-10 p-5 overflow-hidden">
-                    <!-- <template v-if="!result">
+                <form class="2xl:w-[600px] w-full bg-[#1D1D1D] flex flex-col 2xl:p-10 p-5 overflow-hidden" @submit="onSubmitHandler">
+                    <template v-if="!result">
                         <h4 class="mb-10 2xl:text-[40px] text-lg 2xl:text-left text-center font-medium">Заказать звонок от BU</h4>
                         <input
                             v-model="form.name"
@@ -88,7 +92,7 @@ import IconKaspiBank from './icons/IconKaspiBank.vue';
                             v-model="form.phone"
                             required
                             v-maska="maskBinded"
-                            data-maska="+#-(###)-###-##-##"
+                            data-maska="+7-(###)-###-##-##"
                             title="+7-(7XX)-XXX-XX-XX"
                             type="phone"
                             placeholder="Номер телефона"
@@ -101,12 +105,11 @@ import IconKaspiBank from './icons/IconKaspiBank.vue';
                             class="mb-10 w-full rounded bg-[#2B2B2B] py-3 px-4 2xl:text-2xl text-base" />
                         <AppButton label="Записаться" />
                         <p class="mt-10 2xl:text-left text-center 2xl:text-base text-sm">
-                            Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования
-                            Платформой
+                            Нажимая на кнопку, я соглашаюсь на <a class="underline" href="/privacy_policy.pdf" target="_blank">обработку и хранение персональных данных</a>
                         </p>
-                    </template> -->
-                    <!-- <p v-else class="text-4xl text-center my-auto">Мы обязательно с Вами свяжемся в ближайшее время.</p> -->
-                     <iframe class="h-[480px]" width="100%" height="480" frameborder="0" style="overflow: hidden;" src="/form.html"> </iframe>
+                    </template>
+                    <p v-else class="text-4xl text-center my-auto">Мы обязательно с Вами свяжемся в ближайшее время.</p>
+                    <!--  <iframe class="h-[480px]" width="100%" height="480" frameborder="0" style="overflow: hidden;" src="/form.html"> </iframe> -->
                 </form>
             </div>
         </div>

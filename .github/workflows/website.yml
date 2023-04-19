@@ -2,6 +2,15 @@ on:
   push:
     branches: ['deploy']
 name: 🚀 Deploy website on push
+
+env:
+  VITE_API_FIREBASE_API_KEY: ${{ secrets.VITE_API_FIREBASE_API_KEY }}
+  VITE_API_FIREBASE_APP_ID: ${{ secrets.VITE_API_FIREBASE_APP_ID }}
+  VITE_API_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_API_FIREBASE_AUTH_DOMAIN }}
+  VITE_API_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_API_FIREBASE_MESSAGING_SENDER_ID }}
+  VITE_API_FIREBASE_PROJECT_ID: ${{ secrets.VITE_API_FIREBASE_PROJECT_ID }}
+  VITE_API_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_API_FIREBASE_STORAGE_BUCKET }}
+
 jobs:
   web-deploy:
     name: 🎉 Deploy
