@@ -37,7 +37,7 @@ const onSubmitHandler = async (e) => {
     result.value =  await writeUserData(form.name, form.email, form.phone);
 
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push ({'event': 'formSuccessMain'});
+    window.dataLayer.push({'event': 'formSuccessMain'});
     
     for (let prop in form) {
         form[prop] = '';

@@ -1,7 +1,7 @@
 <template>
     <div class="fixed w-full h-full inset-x-0 inset-y-0 z-50 bg-black/40 backdrop-blur-sm">
         <div
-            class="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[650px] 2xl:w-[750px] rounded-md border border-white/25 bg-[rgba(20,21,20,.9)] 2xl:p-8  p-5 shadow-2xl backdrop-blur-sm">
+            class="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[650px] 2xl:w-[750px] max-md:w-[90%]  rounded-md border border-white/25 bg-[rgba(20,21,20,.9)] 2xl:p-8  p-5 shadow-2xl backdrop-blur-sm">
             <div>
                 <p class="text-center text-3xl font-bold uppercase 2xl:text-5xl">
                     <span class="text-[rgba(125,198,137,1)]">Бесплатный</span> Воркшоп

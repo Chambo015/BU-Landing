@@ -2,13 +2,15 @@
     <div class="fixed bottom-7 z-50 right-3 2xl:bottom-14 2xl:right-14 w-[64px] space-y-4">
         <a
             ref="chatsRef"
-            class="flex 2xl:h-[64px] 2xl:w-[64px] w-[40px] h-[40px] 2xl:p-0 p-[2px] cursor-pointer items-center justify-center rounded opacity-60 transition-opacity hover:opacity-100"
+            class="flex 2xl:h-[64px] 2xl:w-[64px] w-[40px] h-[40px] 2xl:p-0 p-[2px] cursor-pointer items-center justify-center rounded opacity-60 transition-opacity hover:opacity-100 overflow-hidden select-none"
             v-for="app in messageApps"
             :key="app.id"
             :style="{ background: app.color }"
             :title="app.label"
             :href="app.href"
-            target="_blank">
+            target="_blank"
+            @mousedown="handleClick(app.id)"
+            >
             <component :is="app.icon" />
         </a>
     </div>
@@ -16,12 +18,21 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
-// import IconConsultation from './icons/IconConsultation.vue';
+import { animate, stagger } from 'motion';
 import IconTelegram from './icons/IconTelegram.vue';
 import IconWhatsapp from './icons/IconWhatsapp.vue';
 import IconInstagram  from './icons/IconInstagram.vue';
+import IconWorkshop  from './icons/IconWorkshop.vue';
 
-import { animate, stagger } from 'motion';
+const props = defineProps({
+    openModal: Function
+})
+
+const handleClick = (id) => {
+    if(id !== 3) return
+    props.openModal()
+}
+
 const chatsRef = ref(null);
 
 onMounted(() => {
@@ -58,12 +69,12 @@ const messageApps = [
         icon: IconInstagram,
         href: 'https://instagram.com/bu.eth?igshid=YmMyMTA2M2Y='
     },
-/*     {
-        id: 2,
-        label: 'Получить консультацию',
+    {
+        id: 3,
+        label: 'Бесплатный Воркшоп',
         color: '#1495FE',
-        icon: IconConsultation,
-    }, */
+        icon: IconWorkshop,
+    },
 ];
 </script>
 
