@@ -53,7 +53,7 @@ const messageApps = [
         label: 'Написать в Whatsapp',
         color: '#42E85F',
         icon: IconWhatsapp,
-        href: 'https://api.whatsapp.com/send?phone=77081056283'
+        href: 'https://api.whatsapp.com/send?phone=77476126014'
     },
     {
         id: 1,

@@ -129,11 +129,11 @@ onMounted(() => {
             <div>
                 <h2 class="lg:mb-8 mb-4"><span class="text-[#30A2FF]">Программа обучения —</span><br class="2xl:hidden" /> 9 месяцев</h2>
                 <div ref="leftColRef">
-                    <p class="2xl:mb-[60px] mb-6 2xl:text-[40px] text-base sm:text-lg md:text-2xl lg:text-3xl leading-tight font-medium">220 часов теории и 250 часов практики</p>
+                    <!-- <p class="2xl:mb-[60px] mb-6 2xl:text-[40px] text-base sm:text-lg md:text-2xl lg:text-3xl leading-tight font-medium">220 часов теории и 250 часов практики</p> -->
                     <div class="2xl:space-y-6 2xl:text-2xl text-sm space-y-4 leading-tight lg:text-xl">
                         <p>
-                            Вебинары, на которых вы можете задать вопросы, проводятся по будням 3 раза в неделю после 16:00
-                            по времени Астаны. Для комфортных тренировок вам понадобится 6-8 часов в неделю.
+                            Вебинары, на которых вы можете задать вопросы, проводятся по будням 3 раза в неделю после 19:00
+                            по времени Астаны. Для успешного прохождения курса вам необходимо уделять около 8 часов в неделю.
                         </p>
                         <p>
                             Материалы курса не потеряют своей актуальности — мы обновляем лекции, и они автоматически

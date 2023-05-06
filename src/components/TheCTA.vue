@@ -56,7 +56,7 @@ const onSubmitHandler = async (e) => {
                     <div class="2xl:p-10 p-5">
                         <h4 class="2xl:mb-10 mb-4 2xl:text-[40px] text-lg font-medium lg:text-2xl">Стоимость курса</h4>
                         <ul class="2xl:mb-10 mb-4 text-right text-sm 2xl:text-xl lg:text-lg">
-                            <li>Старт курса: 24 апреля</li>
+                            <li>Старт курса: через 3 недели</li>
                             <li>Осталось: 5 мест</li>
                         </ul>
                         <ul class="mb-5 list-inside list-disc 2xl:space-y-6 space-y-3 2xl:text-2xl text-sm lg:text-lg">
@@ -66,7 +66,7 @@ const onSubmitHandler = async (e) => {
                             <li>Инсайдерские информаций</li>
                         </ul>
                         <div class="flex justify-center gap-8 2xl:text-[40px] text-xl lg:text-3xl">
-                            <p class="font-bold">52 990 <span class="font-normal">₸/мес</span></p>
+                            <p class="font-bold">25 000 <span class="font-normal">₸/мес</span></p>
                             <p class="font-normal text-white/30">
                                 <span class="font-bold line-through decoration-[#606060]">73 380 </span>₸/мес
                             </p>
