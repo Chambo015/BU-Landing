@@ -117,7 +117,7 @@ onMounted(() => {
             </a>
             <div
                 class="cursor-pointer rounded bg-[#D9D9D9] px-2 py-2 font-['Pixeleum_48'] text-sm !leading-none text-[#181818] sm:py-3 sm:px-4 sm:text-[18px] lg:text-2xl 2xl:px-7 2xl:py-3 2xl:text-[24px]">
-                NFT курс
+                <a href="https://ai.web3u.dev/" target="_blank">AI курс</a>
             </div>
         </header>
         <section class="container relative flex justify-between pb-14 2xl:pb-32" id="hero">

@@ -61,7 +61,7 @@ const onSubmitHandler = async (e) => {
                         </ul>
                         <ul class="mb-5 list-inside list-disc 2xl:space-y-6 space-y-3 2xl:text-2xl text-sm lg:text-lg">
                             <li>Курс в подарок</li>
-                            <li>Длительность рассрочки — 12 месяцев</li>
+                            <li>Длительность рассрочки — 24 месяца</li>
                             <li>Помощь с трудоустройством</li>
                             <li>Инсайдерские информаций</li>
                         </ul>
@@ -73,7 +73,7 @@ const onSubmitHandler = async (e) => {
                         </div>
                     </div>
                     <div class="flex mt-auto lg:h-[88px] h-[40px]  items-center bg-[#F14635] px-3">
-                        <IconKaspiBank class="lg:w-[66px] w-[35px]" />
+                        <!-- <IconKaspiBank class="lg:w-[66px] w-[35px]" /> -->
                         <p class="flex-grow text-center 2xl:text-[40px] lg:text-3xl text-xl font-medium">Рассрочка 0 • 0 • 12</p>
                     </div>
                 </div>
