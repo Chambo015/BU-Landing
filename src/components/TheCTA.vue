@@ -57,7 +57,7 @@ const onSubmitHandler = async (e) => {
                         <h4 class="2xl:mb-10 mb-4 2xl:text-[40px] text-lg font-medium lg:text-2xl">Стоимость курса</h4>
                         <ul class="2xl:mb-10 mb-4 text-right text-sm 2xl:text-xl lg:text-lg">
                             <li>Старт курса: через 3 недели</li>
-                            <li>Осталось: 5 мест</li>
+                            <li>Осталось: 12 мест</li>
                         </ul>
                         <ul class="mb-5 list-inside list-disc 2xl:space-y-6 space-y-3 2xl:text-2xl text-sm lg:text-lg">
                             <li>Курс в подарок</li>
@@ -74,7 +74,7 @@ const onSubmitHandler = async (e) => {
                     </div>
                     <div class="flex mt-auto lg:h-[88px] h-[40px]  items-center bg-[#F14635] px-3">
                         <!-- <IconKaspiBank class="lg:w-[66px] w-[35px]" /> -->
-                        <p class="flex-grow text-center 2xl:text-[40px] lg:text-3xl text-xl font-medium">Рассрочка 0 • 0 • 12</p>
+                        <p class="flex-grow text-center 2xl:text-[40px] lg:text-3xl text-xl font-medium">Рассрочка 0 • 0 • 24</p>
                     </div>
                 </div>
                 <form class="2xl:w-[600px] w-full bg-[#1D1D1D] flex flex-col 2xl:p-10 p-5 overflow-hidden" @submit="onSubmitHandler">
