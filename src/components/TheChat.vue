@@ -60,7 +60,7 @@ const messageApps = [
         label: 'Написать в Telegram',
         color: '#35A9E6',
         icon: IconTelegram,
-        href: 'https://t.me/bueth'
+        href: 'https://t.me/web3u_kz'
     },
     {
         id: 2,
