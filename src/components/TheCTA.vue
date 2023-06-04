@@ -32,6 +32,12 @@ const form = reactive({
     email: '',
 });
 
+const workshopForm = reactive({
+    name: '',
+    phone: '',
+});
+
+
 const onSubmitHandler = async (e) => {
     e.preventDefault();
     result.value = await writeUserData(form.name, form.email, form.phone);
@@ -41,6 +47,21 @@ const onSubmitHandler = async (e) => {
 
     for (let prop in form) {
         form[prop] = '';
+    }
+};
+
+
+const onSubmitWorkshopHandler = async (e) => {
+    e.preventDefault();
+
+    console.log(workshopForm)
+    result.value =  await writeUserData(workshopForm.name, 'ВОРКШОП', workshopForm.phone);
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push ({'event': 'formSuccessMain'});
+
+    for (let prop in form) {
+        workshopForm[prop] = '';
     }
 };
 
@@ -63,9 +84,9 @@ const onSubmitHandler = async (e) => {
                         <li><span>Когда:</span> в эту субботу в 16:00, в zoom конференции</li>
                     </ul>
 
-                    <form @submit="onSubmitHandler" class="mt-5">
+                    <form @submit="onSubmitWorkshopHandler" class="mt-5">
                         <input
-                                v-model="form.name"
+                                v-model="workshopForm.name"
                                 required
                                 minlength="3"
                                 type="text"
@@ -74,9 +95,8 @@ const onSubmitHandler = async (e) => {
                         <p class="text-sm text-white/50">*Укажите WhatsApp номер, чтобы получить ссылку на Воркшоп</p>
                         <input
                                 pattern="[+]\d-\(\d{3}\)-\d{3}-\d{2}-\d{2}"
-                                v-model="form.phone"
+                                v-model="workshopForm.phone"
                                 required
-                                v-maska="maskBinded"
                                 data-maska="+7-(###)-###-##-##"
                                 title="+7-(7XX)-XXX-XX-XX"
                                 type="phone"
