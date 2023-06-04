@@ -1,12 +1,12 @@
 <template>
-    <div class="fixed w-full h-full inset-x-0 inset-y-0 z-50 bg-black/40 backdrop-blur-sm">
+    <div class="fixed inset-x-0 inset-y-0 z-50">
         <div
-            class="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[650px] 2xl:w-[750px] max-md:w-[90%]  rounded-md border border-white/25 bg-[rgba(20,21,20,.9)] 2xl:p-8  p-5 shadow-2xl backdrop-blur-sm">
+            class="fixed right-0 invisible md:visible bottom-0 z-50 w-[35%] lg:w-[30%] xl:w-[27%]  rounded-md border border-white/25 bg-[rgba(20,21,20,.9)] lg:p-4  p-2 shadow-2xl backdrop-blur-sm">
             <div>
-                <p class="text-center text-3xl font-bold uppercase 2xl:text-5xl">
+                <p class="text-center text-xl font-bold uppercase 2xl:text-3xl">
                     <span class="text-[#1495FE]">Бесплатный</span> Воркшоп
                 </p>
-                <ul class="mt-5 font-['TT_Octosquares'] text-lg [&_span]:font-semibold [&_span]:text-[#1495FE]">
+                <ul class="mt-2 xl:mt-5 font-['TT_Octosquares'] text-base lg:text-lg [&_span]:font-semibold [&_span]:text-[#1495FE]">
                     <li><span>Тема:</span> Блокчейн разработчик</li>
                     <li><span>Выступает:</span> основатели BU + старший сеньор разработчик Кирилл Зайнутдинов</li>
                     <li><span>Когда:</span> в эту субботу в 16:00, в zoom конференции</li>
@@ -15,7 +15,7 @@
                     <button
                        
                         @click="isOpenForm = true"
-                        class="mt-5 rounded bg-[#1495FE] px-8 py-2 text-center text-xl hover:bg-[#0067C3]">
+                        class="mt-5 rounded bg-[#1495FE] px-4 py-1  lg:px-6 xl:py-2  text-center text-xl hover:bg-[#0067C3]">
                         Записаться
                     </button>
                     
@@ -39,14 +39,14 @@
                             type="phone"
                             placeholder="Номер телефона"
                             class="mb-5 w-full rounded bg-[#2b2b2b3b] py-3 px-4 text-base 2xl:mb-7 2xl:text-xl" />
-                        <button class="rounded-sm hover:bg-[#1495FE] bg-[#38a1f8] px-6 py-2 2xl:text-xl">Записаться</button>
+                        <button class="rounded-sm hover:bg-[#1495FE] bg-[#38a1f8] px-4 py-1  lg:px-6 xl:py-2 2xl:text-xl">Записаться</button>
                     </form>
             </div>
     
     
             <button
                 @click="closeModal"
-                class="absolute right-0 top-0 h-7 w-7 translate-x-1/2 -translate-y-1/2 rounded-md border border-white/25 bg-[#1c1d1c]">
+                class="absolute right-0 top-0 h-7 w-7  rounded-md border border-white/25 bg-[#1c1d1c]">
                 x
             </button>
         </div>
