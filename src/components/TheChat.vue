@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed bottom-7 z-50 right-3 2xl:bottom-14 2xl:right-14 w-[64px] space-y-4">
+    <div class="fixed bottom-7 z-50 right-2 md:bottom-7 md:left-7 2xl:bottom-14 2xl:left-14 w-[64px] space-y-4">
         <a
             ref="chatsRef"
             class="flex 2xl:h-[64px] 2xl:w-[64px] w-[40px] h-[40px] 2xl:p-0 p-[2px] cursor-pointer items-center justify-center rounded opacity-60 transition-opacity hover:opacity-100 overflow-hidden select-none"
