@@ -17,6 +17,7 @@ import TheTeam from './components/TheTeam.vue';
 import { animate, inView } from 'motion';
 import { useMediaQuery } from '@vueuse/core';
 import WorkShopAlert from './components/WorkShopAlert.vue';
+import TheWorkshopInfo from "@/components/TheWorkshopInfo.vue";
 
 const isLargerSm = useMediaQuery('(min-width: 640px)');
 const launchAnimations = () => {
@@ -74,6 +75,7 @@ provide('isLargerSm', isLargerSm);
         <TheCertificates />
         <TheTeam />
         <TheFeedbacks />
+        <TheWorkshopInfo />
         <TheCTA />
         <!--     <TheStudentList /> -->
         <TheFAQ />
